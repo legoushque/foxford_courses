@@ -329,47 +329,47 @@ def video_download(driver, course_name, course_link, html_repair=False):
 
             if machine().endswith('64'):
                 if not exists('./modules/ffmpeg/x64/ffmpeg.exe'):
-                    x64_ffmpeg = s.get("https://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-20171123-a60b242-win64-static.zip", stream=True)
+                    x64_ffmpeg = s.get("https://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-20180130-42323c3-win64-static.zip", stream=True)
 
                     print("\nСкачиваю FFMpeg...\n")
 
-                    with open("ffmpeg-20171123-a60b242-win64-static.zip", 'wb') as x64ff:
+                    with open("ffmpeg-20180130-42323c3-win64-static.zip", 'wb') as x64ff:
                         copyfileobj(x64_ffmpeg.raw, x64ff)
 
-                    Archive('ffmpeg-20171123-a60b242-win64-static.zip').extractall('./modules/ffmpeg/x64/')
+                    Archive('ffmpeg-20180130-42323c3-win64-static.zip').extractall('./modules/ffmpeg/x64/')
 
-                    move('./modules/ffmpeg/x64/ffmpeg-20171123-a60b242-win64-static/bin/ffmpeg.exe', './modules/ffmpeg/x64/ffmpeg.exe')
+                    move('./modules/ffmpeg/x64/ffmpeg-20180130-42323c3-win64-static/bin/ffmpeg.exe', './modules/ffmpeg/x64/ffmpeg.exe')
 
-                    rmtree('./modules/ffmpeg/x64/ffmpeg-20171123-a60b242-win64-static')
+                    rmtree('./modules/ffmpeg/x64/ffmpeg-20180130-42323c3-win64-static')
 
-                    unlink('./ffmpeg-20171123-a60b242-win64-static.zip')
+                    unlink('./ffmpeg-20180130-42323c3-win64-static.zip')
 
                     print("Готово.")
 
             else:
                 if not exists('./modules/ffmpeg/x86/ffmpeg.exe'):
-                    x86_ffmpeg = s.get("https://ffmpeg.zeranoe.com/builds/win32/static/ffmpeg-20171123-a60b242-win32-static.zip", stream=True)
+                    x86_ffmpeg = s.get("https://ffmpeg.zeranoe.com/builds/win32/static/ffmpeg-20180130-42323c3-win32-static.zip", stream=True)
 
                     print("\nСкачиваю FFMpeg...\n")
 
-                    with open("ffmpeg-20171123-a60b242-win32-static.zip", 'wb') as x86ff:
+                    with open("ffmpeg-20180130-42323c3-win32-static.zip", 'wb') as x86ff:
                         copyfileobj(x86_ffmpeg.raw, x86ff)
 
-                    Archive('ffmpeg-20171123-a60b242-win32-static.zip').extractall('./modules/ffmpeg/x86/')
+                    Archive('ffmpeg-20180130-42323c3-win32-static.zip').extractall('./modules/ffmpeg/x86/')
 
-                    move('./modules/ffmpeg/x86/ffmpeg-20171123-a60b242-win32-static/bin/ffmpeg.exe', './modules/ffmpeg/x86/ffmpeg.exe')
+                    move('./modules/ffmpeg/x86/ffmpeg-20180130-42323c3-win32-static/bin/ffmpeg.exe', './modules/ffmpeg/x86/ffmpeg.exe')
 
-                    rmtree('./modules/ffmpeg/x86/ffmpeg-20171123-a60b242-win32-static')
+                    rmtree('./modules/ffmpeg/x86/ffmpeg-20180130-42323c3-win32-static')
 
-                    unlink('./ffmpeg-20171123-a60b242-win32-static.zip')
+                    unlink('./ffmpeg-20180130-42323c3-win32-static.zip')
 
                     print("Готово.")
 
             if machine().endswith('64'):
-                call(f"""{abspath("./modules/ffmpeg/x64/ffmpeg.exe")} -timeout 5000000 -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -headers "Authorization: {auth_tkn}" -headers "Referer: {referer_url}" -headers "Origin: https://lesson.foxford.ru" -user_agent "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1" -i "https://media-store.foxford.ru:10002/api/v1/buckets/foxford-media.webinar.hls/objects/{m3u8_id}.master.m3u8" -bsf:a aac_adtstoasc -c copy -crf 50 {abspath("./video.mp4")}""")
+                call(f"""{abspath("./modules/ffmpeg/x64/ffmpeg.exe")} -timeout 5000000 -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -headers "Authorization: {auth_tkn}" -headers "Referer: {referer_url}" -headers "Origin: https://lesson.foxford.ru" -user_agent "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1" -i "https://media-store.foxford.ru:10002/api/v1/buckets/foxford-media.webinar.hls/objects/{m3u8_id}.master.m3u8" -bsf:a aac_adtstoasc -c copy {abspath("./video.mp4")}""")
 
             else:
-                call(f"""{abspath("./modules/ffmpeg/x86/ffmpeg.exe")} -timeout 5000000 -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -headers "Authorization: {auth_tkn}" -headers "Referer: {referer_url}" -headers "Origin: https://lesson.foxford.ru" -user_agent "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1" -i "https://media-store.foxford.ru:10002/api/v1/buckets/foxford-media.webinar.hls/objects/{m3u8_id}.master.m3u8" -bsf:a aac_adtstoasc -c copy -crf 50 {abspath("./video.mp4")}""")
+                call(f"""{abspath("./modules/ffmpeg/x86/ffmpeg.exe")} -timeout 5000000 -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -headers "Authorization: {auth_tkn}" -headers "Referer: {referer_url}" -headers "Origin: https://lesson.foxford.ru" -user_agent "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1" -i "https://media-store.foxford.ru:10002/api/v1/buckets/foxford-media.webinar.hls/objects/{m3u8_id}.master.m3u8" -bsf:a aac_adtstoasc -c copy {abspath("./video.mp4")}""")
 
             while not exists(abspath("./video.mp4")):
                 sleep(1)
