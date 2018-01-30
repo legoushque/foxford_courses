@@ -1,0 +1,31 @@
+from os import unlink, listdir, rename
+from os.path import join, abspath
+from shutil import move
+
+
+def sort_files(course_name, subject_name):
+    '''Sorting for materials'''
+
+    # listing all files
+    for filename in listdir(abspath(".")):
+
+        # check if file is video
+        if filename.endswith(".mp4"):
+            # move it to corresponding directory
+            move(
+                join(abspath('.'), filename),
+                join(abspath('.'), course_name, filename[:-4], "Видео.mp4")
+            )
+
+        # file is audio
+        elif filename.endswith(".aac"):
+            move(
+                join(abspath('.'), filename),
+                join(abspath('.'), course_name, filename[:-4], "Аудио.aac")
+            )
+
+        # HTML cleanup for next session
+        elif filename.endswith(".html"):
+            unlink(join(abspath('.'), filename))
+
+    rename(join(abspath('.'), course_name), join(abspath('.'), course_name + '. ' + subject_name))
