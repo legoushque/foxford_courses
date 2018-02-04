@@ -288,6 +288,10 @@ https://mega.nz/#F!NyxmnDzT!x9kTW9VsdY28oCT4KvNBBA
 
 https://yadi.sk/d/nx6yVqVM3S3pe7
 
+*Физика. Подготовка к ЕГЭ / Часть С:*
+
+https://yadi.sk/d/dlcHeQ603S53VP
+
 ...
 
 -------------------------
