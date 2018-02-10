@@ -309,6 +309,10 @@ https://yadi.sk/d/dlcHeQ603S53VP
 
 https://mega.nz/#F!T9pR3STQ!pjIy_jvZOMvg9ucrMENKSw
 
+*(2018) Телеграм-канал с различной полезной информацией*
+
+https://t.me/joinchat/AAAAAFAGr85Sj0x9ONxNiA
+
 ...
 
 --------------------------
