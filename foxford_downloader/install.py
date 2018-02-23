@@ -2,4 +2,4 @@
 from subprocess import call
 
 # Packages install
-call("pip install selenium Pillow requests requests[security] htmlfun pyunpack", shell=True)
+call("pip install requests requests[security] pyunpack", shell=True)
