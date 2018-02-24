@@ -10,6 +10,7 @@ from urllib.parse import parse_qs, urlparse
 from pyunpack import Archive
 from requests import Session
 
+
 def download():
     s = Session()
 
