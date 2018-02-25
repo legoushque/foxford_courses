@@ -23,16 +23,15 @@
     
     --- ИЛИ ---
     
-    4. В открывшейся консоли вбей следубщее: 
-        1) $x("//html//video")[0].firstChild.src :: результат выполнения - переменная {m3u8_link}. Без кавычек.
-        
-        2) $x("//html//iframe")[0].src. Получится ссылка, по которой тебе надо перейти. ПКМ - Открыть в новой вкладке. Там тоже открываешь консоль (см. п. 3), а страницу с видео, на которой находился до этого, закрываешь (не забудь переменную).
+    4. В открывшейся консоли вбей следубщее: $x("//html//iframe")[0].src. Получится ссылка, по которой тебе надо перейти. ПКМ - Открыть в новой вкладке. Там тоже открываешь консоль (см. п. 3), а страницу с видео, на которой находился до этого, закрываешь (не забудь переменную).
     
     5. В новой полученной консоли вбей две команды:
     
         1) JSON.parse(localStorage[`account_${localStorage.account_id}`]).access_token :: результат выполнения - это переменная {auth_tkn}. Без кавычек.
         
-        2) location.href :: результат выполнения - это переменная {referer_url}. Без кавычек.
+        2) $x("//html//video")[0].firstChild.src :: результат выполнения - переменная {m3u8_link}. Без кавычек.
+        
+        3) location.href :: результат выполнения - это переменная {referer_url}. Без кавычек.
     
     6. Открой терминал в той папке, где лежит ffmpeg и выполни команду c заменой переменных:
     ./ffmpeg.exe -timeout 5000000 -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -headers "Authorization: {auth_tkn}" -headers "Referer: {referer_url}" -headers "Origin: https://lesson.foxford.ru" -user_agent "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1" -i "{m3u8_link}" -bsf:a aac_adtstoasc -c copy ./{название_урока}.mp4
