@@ -25,11 +25,24 @@
     
     6. Открой терминал в той папке, где лежит ffmpeg и выполни команду c заменой переменных:
     ./ffmpeg.exe -timeout 5000000 -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -headers "Authorization: {auth_tkn}" -headers "Referer: {referer_url}" -headers "Origin: https://lesson.foxford.ru" -user_agent "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1" -i "{m3u8_link}" -bsf:a aac_adtstoasc -c copy ./{название_урока}.mp4
-
+    
 Метод 2
 --------------------
 
-*Сложность: нормально (для владельцев телефонов под управлением Android)*
+*Сложность: средняя (низкая надежность, высокая эффективность)*
+
+    1. В консоли Chrome на странице видео:
+       
+       1) $x("//html//video")[0].firstChild.src :: результат выполнения - переменная {m3u8_link}. Без кавычек.
+    
+    2. Открой терминал в той папке, где лежит ffmpeg и выполни команду c заменой переменных:
+       
+       ./ffmpeg.exe -timeout 5000000 -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -i {m3u8_link} -bsf:a aac_adtstoasc -c copy {имя_файла}.mp4
+
+Метод 3
+--------------------
+
+*Сложность: легкая (для владельцев телефонов под управлением Android)*
 
     1. Скачиваем приложение Фоксфорд.Курсы.
 
