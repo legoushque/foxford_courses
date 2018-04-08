@@ -19,7 +19,7 @@
     
         1) JSON.parse(localStorage[`account_${localStorage.account_id}`]).access_token :: результат выполнения - это переменная {auth_tkn}. Без кавычек.
         
-        2) $x("//html//video")[0].firstChild.src :: результат выполнения - переменная {m3u8_link}. Без кавычек.
+        2) document.getElementsByTagName('video')[0].firstChild.src :: результат выполнения - переменная {m3u8_link}. Без кавычек.
         
         3) location.href :: результат выполнения - это переменная {referer_url}. Без кавычек.
     
@@ -33,7 +33,7 @@
 
     1. В консоли Chrome на странице видео:
        
-       1) $x("//html//video")[0].firstChild.src :: результат выполнения - переменная {m3u8_link}. Без кавычек.
+       1) document.getElementsByTagName('video')[0].firstChild.src :: результат выполнения - переменная {m3u8_link}. Без кавычек.
     
     2. Открой терминал в той папке, где лежит ffmpeg и выполни команду c заменой переменных:
        
