@@ -15,7 +15,7 @@
        
        ./ffmpeg.exe -timeout 5000000 -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -i {m3u8_link} -bsf:a aac_adtstoasc -c copy {имя_файла}.mp4
 
-Метод 3
+Метод 2
 --------------------
 
 *Сложность: легкая (для владельцев телефонов под управлением Android / любителей эмуляторов)*
