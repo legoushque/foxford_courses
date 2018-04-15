@@ -3,30 +3,6 @@
 ====================
 
 Метод 1
---------
-
-*Сложность: высокая (для продвинутых технарей и прочих хардкорщиков)*
-
-    1. Скачай FFMpeg (https://ffmpeg.zeranoe.com/builds/) для своей платформы. Достань из папки bin в архиве ffmpeg и положи в доступное место.
-
-    2. Открой страницу с видео в Chrome. Прямо чтобы плеер видно было.
-
-    3. Нажми Shift + Ctrl + I.
-
-    4. В открывшейся консоли вбей следующее: document.getElementsByClassName('full_screen')[0].firstChild.src. Получится ссылка, по которой тебе надо перейти. ПКМ - Открыть в новой вкладке. Там тоже открываешь консоль (см. п. 3), а страницу с видео, на которой находился до этого, закрываешь (не забудь переменную).
-    
-    5. В новой полученной консоли вбей три команды:
-    
-        1) JSON.parse(localStorage[`account_${localStorage.account_id}`]).access_token :: результат выполнения - это переменная {auth_tkn}. Без кавычек.
-        
-        2) document.getElementsByTagName('video')[0].firstChild.src :: результат выполнения - переменная {m3u8_link}. Без кавычек.
-        
-        3) location.href :: результат выполнения - это переменная {referer_url}. Без кавычек.
-    
-    6. Открой терминал в той папке, где лежит ffmpeg и выполни команду c заменой переменных:
-    ./ffmpeg.exe -timeout 5000000 -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -headers "Authorization: {auth_tkn}" -headers "Referer: {referer_url}" -headers "Origin: https://lesson.foxford.ru" -user_agent "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1" -i "{m3u8_link}" -bsf:a aac_adtstoasc -c copy ./{название_урока}.mp4
-    
-Метод 2
 --------------------
 
 *Сложность: средняя (низкая надежность, высокая эффективность)*
@@ -42,7 +18,7 @@
 Метод 3
 --------------------
 
-*Сложность: легкая (для владельцев телефонов под управлением Android)*
+*Сложность: легкая (для владельцев телефонов под управлением Android / любителей эмуляторов)*
 
     1. Скачиваем приложение Фоксфорд.Курсы.
 
