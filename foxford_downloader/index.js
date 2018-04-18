@@ -27,19 +27,19 @@ if (!fs.existsSync(ffDest + '/ffmpeg.exe')) {
     console.log(chalk.green('FFMpeg найден.'));
 }
 
-// Reads links.txt
+// Checks links.txt
 if (fs.existsSync(linksFileDest)) {
     console.log(chalk.green('Links.txt найден.\n'));
 
 } else {
-    console.log(chalk.red('Links.txt нет. Создайте его, а после - забейте прямыми ссылками на видео (вида "/groups/<id>"). А пока завершаю работу...'));
-    process.exit(1);
+    fs.closeSync(fs.openSync(linksFileDest, 'w'));
+
 }
 
 (async () => {
     // Waits for user to log in
 
-    console.log(chalk.yellow('Войдите в свой аккаунт, если еще этого не сделали, а затем соберите ссылки в положите их в links.txt'));
+    console.log(chalk.yellow('Войдите в свой аккаунт, если еще этого не сделали, а затем соберите ссылки на видео (вида "/groups/<id>") и положите их в links.txt\n'));
 
     let browser = await puppeteer.launch({
         userDataDir: chromeData,
@@ -50,11 +50,11 @@ if (fs.existsSync(linksFileDest)) {
     await page.goto('https://foxford.ru/user/login?redirect=/dashboard');
     let ans = query(chalk.yellow('Введите Y, когда будете готовы. N - чтобы выйти.'));
 
+    await browser.close();
+
     if (!ans) {
         process.exit(0);
     }
-
-    await browser.close();
 
     // #######################
     // Runs puppeteer in headless mode and begins iterating over links
