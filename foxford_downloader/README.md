@@ -7,13 +7,14 @@
 
 *Сложность: средняя (низкая надежность, высокая эффективность)*
 
-    1. В консоли Chrome на странице видео:
-       
-       1) document.getElementsByTagName('video')[0].firstChild.src :: результат выполнения - переменная {m3u8_link}. Без кавычек.
+    1. Установи Node.js последней версии (9+).
     
-    2. Открой терминал в той папке, где лежит ffmpeg и выполни команду c заменой переменных:
+    2. Склонируй репозиторий, перейди в терминале сюда, выполни следующие команды:
        
-       ./ffmpeg.exe -timeout 5000000 -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -i {m3u8_link} -bsf:a aac_adtstoasc -c copy {имя_файла}.mp4
+       1) npm install
+       2) npm start
+    
+    3. Следуй инструкциям в терминале.
 
 Метод 2
 --------------------
