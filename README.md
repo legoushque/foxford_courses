@@ -286,13 +286,17 @@ https://mega.nz/#F!NyxmnDzT!x9kTW9VsdY28oCT4KvNBBA
 
 *Математика. Подготовка к ЕГЭ. Часть С:*
 
-https://yadi.sk/d/nx6yVqVM3S3pe7
+https://mega.nz/#F!XCAxgY6L!uP34E-jUpiyxxWv-QR2pXQ
 
 *Физика. Подготовка к ЕГЭ / Часть С:*
 
 https://yadi.sk/d/dlcHeQ603S53VP
 
 ...
+
+*Остальное ищите на канале в Телеграм:*
+
+https://t.me/joinchat/AAAAAFAGr853kHyIZ74LOA
 
 -------------------------
 
@@ -308,10 +312,6 @@ https://yadi.sk/d/dlcHeQ603S53VP
 * Физика (Часть В и С)
 
 https://mega.nz/#F!T9pR3STQ!pjIy_jvZOMvg9ucrMENKSw
-
-*(2018) Телеграм-канал с различной полезной информацией*
-
-https://t.me/joinchat/AAAAAFAGr853kHyIZ74LOA
 
 ...
 
