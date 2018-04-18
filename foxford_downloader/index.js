@@ -85,6 +85,8 @@ if (fs.existsSync(linksFileDest)) {
         } catch (err) {
             console.log(chalk.red('Обнаружена проблема при получении видео. Беру следующее...'));
             console.log('=========\n');
+            counter++;
+            
             continue;
 
         }
