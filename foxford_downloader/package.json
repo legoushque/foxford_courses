@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js --with-auth",
-    "faststart": "node index.js --no-auth"
+    "faststart": "node index.js --no-auth",
+    "postinstall": "npm ddp"
   },
   "author": "Marise Hayashi <@limitedeternity> (https://limitedeternity.github.io/)",
   "license": "MIT",
