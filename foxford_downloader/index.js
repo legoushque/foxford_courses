@@ -45,7 +45,8 @@ console.log(chalk.yellow('Внимание. Настоятельно реком�
 
         var browser = await puppeteer.launch({
             userDataDir: chromeData,
-            headless: false
+            headless: false,
+            devtools: true
         });
 
         var page = await browser.newPage();
