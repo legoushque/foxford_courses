@@ -1,6 +1,7 @@
 const ffbinaries = require("ffbinaries");
 const fs = require("fs");
 const path = require("path");
+const url = require("url");
 const util = require("util");
 const puppeteer = require("puppeteer");
 const exec = util.promisify(require("child_process").exec);
@@ -93,8 +94,8 @@ console.log(chalk.yellow('Внимание. Настоятельно реком�
             ]);
             
             var m3u8Link = await page.evaluate(() => document.getElementsByTagName('video')[0].firstChild.src);
-            var authToken = await page.evaluate(() => JSON.parse(localStorage[`account_${localStorage.account_id}`]).access_token);
             var lessonName = await page.evaluate(() => document.querySelector('[class^="Header__name__"]').innerText);
+            var authToken = url.parse(erlyFronts, true).query.token;
 
         } catch (err) {
             console.log(chalk.red('Обнаружена проблема при получении видео. Беру следующее...'));
@@ -110,7 +111,7 @@ console.log(chalk.yellow('Внимание. Настоятельно реком�
 
         console.log(chalk.blue(`Скачиваю видео по ссылке #${counter}... Это займет какое-то время.`));
 
-        await exec(`${ffmpegBin} -hide_banner -loglevel panic -timeout 5000000 -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -headers "Authorization: ${authToken}" -headers "Referer: ${erlyFronts}" -headers "Origin: https://lesson.foxford.ru" -user_agent "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1" -i "${m3u8Link}" -bsf:a aac_adtstoasc -c copy ${filename}`, {maxBuffer : Infinity});
+        await exec(`${ffmpegBin} -hide_banner -loglevel panic -timeout 5000000 -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -headers "Authorization: ${authToken}" -headers "Referer: ${erlyFronts}" -headers "Origin: https://v3.foxford.ru" -user_agent "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1" -i "${m3u8Link}" -bsf:a aac_adtstoasc -c copy ${filename}`, {maxBuffer : Infinity});
         console.log(chalk.green(`Скачивание видео #${counter} завершено! Сохранено в ${filename}`));
         console.log('=========\n');
 
