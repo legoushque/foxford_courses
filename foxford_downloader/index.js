@@ -115,7 +115,7 @@ console.log(chalk.yellow('Внимание. Настоятельно реком�
 
         var filename = `${slug(lessonName)}.mp4`;
 
-        console.log(chalk.blue(`Скачиваю видео по ссылке #${counter}... Это займет какое-то время.`));
+        console.log(chalk.green(`Скачиваю видео по ссылке #${counter}... Это займет какое-то время.`));
 
         await exec(`${ffmpegBin} -hide_banner -loglevel panic -timeout 5000000 -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -headers "Authorization: ${authToken}" -headers "Referer: ${erlyFronts}" -headers "Origin: https://v3.foxford.ru" -user_agent "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1" -i "${m3u8Link}" -bsf:a aac_adtstoasc -c copy ${filename}`, {maxBuffer : Infinity});
         console.log(chalk.green(`Скачивание видео #${counter} завершено! Сохранено в ${filename}`));
