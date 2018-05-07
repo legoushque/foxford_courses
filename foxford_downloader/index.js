@@ -76,6 +76,12 @@ console.log(chalk.yellow('Внимание. Настоятельно реком�
 
     var counter = 1;
     var linkList = fs.readFileSync(linksFile, 'utf8').replace(/\r\n/g, "\r").replace(/\n/g, "\r").split(/\r/).filter(Boolean);
+    
+    if (! linkList.every((elem) => { return Boolean(elem.match(/^https:\/\/foxford\.ru\/groups\/\d{3,6}$/)) })) {
+        console.log(chalk.red('Одна или несколько ссылок не прошли проверку на корректность.'));
+        await browser.close();
+        process.exit(1);
+    }
 
     for (const link of linkList) {
         console.log(chalk.blue(`Готовлюсь к скачиванию видео по ссылке #${counter}...`));
