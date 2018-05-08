@@ -81,6 +81,9 @@ console.log(chalk.yellow('Внимание. Настоятельно реком�
         console.log(chalk.red('Одна или несколько ссылок не прошли проверку на корректность.'));
         await browser.close();
         process.exit(1);
+        
+    } else {
+        console.log(chalk.green(`Ссылок загружено: ${linkList.length}.`));
     }
 
     for (const link of linkList) {
