@@ -47,28 +47,39 @@ console.log(chalk.yellow('Внимание. Настоятельно реком�
         console.log('Started!');
     });
 
-    let ans = query(chalk.yellow('Введите Y, когда будете готовы. N - чтобы выйти.'));
-    if (!ans) {
+    let isReady = query(chalk.yellow('Введите Y, когда будете готовы. N - чтобы выйти.'));
+    if (!isReady) {
         await browser.end();
         process.exit(0);
     }
 
-    console.log('=========\n');
-
     var counter = 1;
     var linkList = fs.readFileSync(linksFile, 'utf8').replace(/\r\n/g, "\r").replace(/\n/g, "\r").split(/\r/).filter(Boolean);
     
-    if (! linkList.every((elem) => { return Boolean(elem.match(/^https:\/\/foxford\.ru\/groups\/\d{3,6}$/)) })) {
+    if (!linkList.every((elem) => { return Boolean(elem.match(/^https:\/\/foxford\.ru\/groups\/\d{3,6}$/)) })) {
         console.log(chalk.red('Одна или несколько ссылок не прошли проверку на корректность.'));
         await browser.end();
         process.exit(1);
         
     } else {
-        console.log(chalk.green(`Ссылок загружено: ${linkList.length}.`));
+        console.log(chalk.green(`Ссылок загружено: ${linkList.length}.\n`));
     }
 
+    let isMultiprocess = query(chalk.yellow('Запустить скачивание в многопоточном режиме? Это может серьезно отразиться на производительности, но значительно ускорит загрузку списка видео.'));
+
+    if (isMultiprocess) {
+        var processList = [];
+    }
+
+    console.log('=========\n');
+
     for (const link of linkList) {
-        console.log(chalk.blue(`Готовлюсь к скачиванию видео по ссылке #${counter}...`));
+        if (isMultiprocess) {
+            console.log(chalk.blue(`Готовлюсь к добавлению в очередь видео по ссылке #${counter}...`));
+
+        } else {
+            console.log(chalk.blue(`Готовлюсь к скачиванию видео по ссылке #${counter}...`));
+        }
 
         try {
             await browser.goto(link).wait('.full_screen');
@@ -82,7 +93,7 @@ console.log(chalk.yellow('Внимание. Настоятельно реком�
             var erlyOrigin = await browser.evaluate(() => location.origin);
             var authToken = url.parse(erlyFronts, true).query.token;
 
-            await browser.setHtml('<h1>Теперь это окно можно свернуть</h1>').evaluate(() => {
+            await browser.setHtml('<h1 style="text-align:center;">Теперь это окно можно свернуть</h1>').evaluate(() => {
                 console.log('Operation chain finished!');
             });
 
@@ -98,18 +109,38 @@ console.log(chalk.yellow('Внимание. Настоятельно реком�
 
         var filename = `${slug(lessonName)}.mp4`;
 
-        console.log(chalk.green(`Скачиваю видео по ссылке #${counter}... Это займет какое-то время.`));
+        if (!isMultiprocess) {
+            console.log(chalk.green(`Скачиваю видео по ссылке #${counter}... Это займет какое-то время.`));
+            await exec(`${ffmpegBin} -hide_banner -nostats -loglevel panic -timeout 5000000 -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -headers "Authorization: ${authToken}" -headers "Referer: ${erlyFronts}" -headers "Origin: ${erlyOrigin}" -user_agent "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1" -i "${m3u8Link}" -bsf:a aac_adtstoasc -c copy ${filename}`, {
+                maxBuffer: Infinity
+            });
 
-        await exec(`${ffmpegBin} -hide_banner -loglevel panic -timeout 5000000 -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -headers "Authorization: ${authToken}" -headers "Referer: ${erlyFronts}" -headers "Origin: ${erlyOrigin}" -user_agent "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1" -i "${m3u8Link}" -bsf:a aac_adtstoasc -c copy ${filename}`, {
-            maxBuffer: Infinity
-        });
-        console.log(chalk.green(`Скачивание видео #${counter} завершено! Сохранено в ${filename}`));
+            console.log(chalk.green(`Скачивание видео #${counter} завершено! Сохранено в ${filename}`));
+
+        } else {
+            processList.push(
+                exec(`${ffmpegBin} -hide_banner -nostats -loglevel panic -timeout 5000000 -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -headers "Authorization: ${authToken}" -headers "Referer: ${erlyFronts}" -headers "Origin: ${erlyOrigin}" -user_agent "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1" -i "${m3u8Link}" -bsf:a aac_adtstoasc -c copy ${filename}`, {
+                    maxBuffer: Infinity
+
+                }).then(() => {
+                    console.log(chalk.green(`Скачивание видео #${counter} завершено!`));
+                })
+            );
+
+            console.log(chalk.green(`Видео #${counter} добавлено в очередь! Будет сохранено в ${filename}`));
+        }
+
         console.log('=========\n');
-
         counter++;
     }
 
-    console.log(chalk.green('Загрузка завершена.'));
     await browser.end();
+
+    if (isMultiprocess) {
+        console.log(chalk.green('Скачивание видео запущено. Это займет какое-то время.\n'));
+        await Promise.all(processList);
+    }
+
+    console.log(chalk.green('Загрузка завершена.'));
 
 })();
