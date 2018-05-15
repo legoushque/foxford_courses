@@ -1,0 +1,1 @@
+location.href.match(/https:\/\/foxford\.ru\/lessons\/(\d+)\/tasks\/(\d+)/) && "complete" === document.readyState && (document.querySelectorAll(".scrollarea")[1].removeAttribute("style"), document.querySelector('[class^="Content__wrapper__"]').innerHTML = document.querySelector('[class^="Content__content__"]').outerHTML);
