@@ -56,6 +56,12 @@ console.log(chalk.yellow('Внимание. Настоятельно реком�
     var counter = 1;
     var linkList = fs.readFileSync(linksFile, 'utf8').replace(/\r\n/g, "\r").replace(/\n/g, "\r").split(/\r/).filter(Boolean);
     
+    if (linkList.length === 0) {
+        console.log(chalk.red('Ссылки не загружены'));
+        await browser.end();
+        process.exit(1);
+    }
+
     if (!linkList.every((elem) => { return Boolean(elem.match(/^https:\/\/foxford\.ru\/groups\/\d{3,6}$/)) })) {
         console.log(chalk.red('Одна или несколько ссылок не прошли проверку на корректность.'));
         await browser.end();
@@ -65,7 +71,12 @@ console.log(chalk.yellow('Внимание. Настоятельно реком�
         console.log(chalk.green(`Ссылок загружено: ${linkList.length}.\n`));
     }
 
-    let isMultiprocess = query(chalk.yellow('Запустить скачивание в многопоточном режиме? Это может серьезно отразиться на производительности, но значительно ускорит загрузку списка видео.'));
+    if (linkList.length > 1) {
+        let isMultiprocess = query(chalk.yellow('Запустить скачивание в многопоточном режиме? Это может серьезно отразиться на производительности, но значительно ускорит загрузку списка видео.'));
+
+    } else {
+        let isMultiprocess = false;
+    }
 
     if (isMultiprocess) {
         var processList = [];
