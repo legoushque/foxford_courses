@@ -20,8 +20,13 @@ console.log(chalk.yellow('Внимание. Настоятельно реком�
     if (!fs.existsSync(ffmpegBin)) {
         console.log(chalk.yellow('FFMpeg не найден. Скачиваю...'));
     
-        ffbinaries.downloadBinaries(['ffmpeg'], { destination: __dirname }, () => {
-            console.log(chalk.green('FFMpeg загружен.\n'));
+        await new Promise(resolve => {
+            ffbinaries.downloadBinaries(['ffmpeg'], {
+                destination: __dirname
+            }, () => {
+                console.log(chalk.green('FFMpeg загружен.\n'));
+                resolve(true);
+            });
         });
 
     } else {
