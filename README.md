@@ -284,17 +284,7 @@ https://mega.nz/#F!NyxmnDzT!x9kTW9VsdY28oCT4KvNBBA
 ***ЕГЭ / Олимпиады***
 ---------
 
-*Математика. Подготовка к ЕГЭ. Часть С:*
-
-https://mega.nz/#F!XCAxgY6L!uP34E-jUpiyxxWv-QR2pXQ
-
-*Физика. Подготовка к ЕГЭ / Часть С:*
-
-https://yadi.sk/d/dlcHeQ603S53VP
-
-...
-
-*Остальное ищите на канале в Телеграм:*
+*Хранилище переехало в Телеграм:*
 
 https://t.me/joinchat/AAAAAFAGr853kHyIZ74LOA
 
