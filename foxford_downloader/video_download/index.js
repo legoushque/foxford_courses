@@ -139,7 +139,7 @@ console.log(chalk.yellow('Внимание. Настоятельно реком�
                     maxBuffer: Infinity
 
                 }).then(() => {
-                    console.log(chalk.green(`Скачивание видео #${counter} завершено!`));
+                    console.log(chalk.green('...✓'));
                 })
             );
 
