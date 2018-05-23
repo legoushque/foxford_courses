@@ -1,4 +1,4 @@
-const ffbinaries = require("ffbinaries");
+﻿const ffbinaries = require("ffbinaries");
 const fs = require("fs");
 const path = require("path");
 const url = require("url");
@@ -52,7 +52,7 @@ console.log(chalk.yellow('Внимание. Настоятельно реком�
         console.log('Started!');
     });
 
-    let isReady = query(chalk.yellow('Введите Y, когда будете готовы. N - чтобы выйти.'));
+    var isReady = query(chalk.yellow('Введите Y, когда будете готовы. N - чтобы выйти.'));
     if (!isReady) {
         await browser.end();
         process.exit(0);
@@ -77,10 +77,10 @@ console.log(chalk.yellow('Внимание. Настоятельно реком�
     }
 
     if (linkList.length > 1) {
-        let isMultiprocess = query(chalk.yellow('Запустить скачивание в многопоточном режиме? Это может серьезно отразиться на производительности, но значительно ускорит загрузку списка видео.'));
+        var isMultiprocess = query(chalk.yellow('Запустить скачивание в многопоточном режиме? Это может серьезно отразиться на производительности, но значительно ускорит загрузку списка видео.'));
 
     } else {
-        let isMultiprocess = false;
+        var isMultiprocess = false;
     }
 
     if (isMultiprocess) {
