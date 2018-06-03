@@ -57,7 +57,13 @@ console.log(chalk.yellow('Внимание. Настоятельно реком�
         process.exit(1);
 
     } else {
-        console.log(chalk.green(`Ссылок загружено: ${linkList.length}.\n`));
+        let time = new Date;
+
+        let hours = ('0' + time.getHours()).slice(-2);
+        let minutes = ('0' + time.getMinutes()).slice(-2);
+        let seconds = ('0' + time.getSeconds()).slice(-2);
+
+        console.log(chalk.green(`Ссылок загружено: ${linkList.length}. Скачивание начато в ${hours}:${minutes}:${seconds}\n`));
     }
 
     if (linkList.length > 1) {
@@ -141,6 +147,12 @@ console.log(chalk.yellow('Внимание. Настоятельно реком�
         await Promise.all(processList);
     }
 
-    console.log(chalk.green('Загрузка завершена.'));
+    let time = new Date;
+
+    let hours = ('0' + time.getHours()).slice(-2);
+    let minutes = ('0' + time.getMinutes()).slice(-2);
+    let seconds = ('0' + time.getSeconds()).slice(-2);
+
+    console.log(chalk.green(`\nЗагрузка завершена в ${hours}:${minutes}:${seconds}\n`));
 
 })();
