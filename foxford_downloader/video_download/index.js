@@ -1,4 +1,4 @@
-﻿const ffbinaries = require("ffbinaries");
+const ffmpeg = require('@ffmpeg-installer/ffmpeg');
 const fs = require("fs");
 const path = require("path");
 const url = require("url");
@@ -10,28 +10,12 @@ const query = require("cli-interact").getYesNo;
 const slug = require("slug");
 
 var linksFile = __dirname + '/links.txt';
-var ffmpegBin = process.platform === "win32" ? 'ffmpeg.exe' : './ffmpeg';
+var ffmpegBin = ffmpeg.path;
 
 console.log(chalk.magenta('Coded by @limitedeternity. \n'));
 console.log(chalk.yellow('Внимание. Настоятельно рекомендуется использовать VPN, чтобы избежать проблем, возникающих во время бесчинств РКН.\n'));
 
 (async () => {
-
-    if (!fs.existsSync(ffmpegBin)) {
-        console.log(chalk.yellow('FFMpeg не найден. Скачиваю...'));
-    
-        await new Promise(resolve => {
-            ffbinaries.downloadBinaries(['ffmpeg'], {
-                destination: __dirname
-            }, () => {
-                console.log(chalk.green('FFMpeg загружен.\n'));
-                resolve(true);
-            });
-        });
-
-    } else {
-        console.log(chalk.green('FFMpeg найден.'));
-    }
 
     if (fs.existsSync(linksFile)) {
         console.log(chalk.green('Links.txt найден.\n'));
@@ -60,7 +44,7 @@ console.log(chalk.yellow('Внимание. Настоятельно реком�
 
     var counter = 1;
     var linkList = fs.readFileSync(linksFile, 'utf8').replace(/\r\n/g, "\r").replace(/\n/g, "\r").split(/\r/).filter(Boolean);
-    
+
     if (linkList.length === 0) {
         console.log(chalk.red('Ссылки не загружены'));
         await browser.end();
@@ -71,7 +55,7 @@ console.log(chalk.yellow('Внимание. Настоятельно реком�
         console.log(chalk.red('Одна или несколько ссылок не прошли проверку на корректность.'));
         await browser.end();
         process.exit(1);
-        
+
     } else {
         console.log(chalk.green(`Ссылок загружено: ${linkList.length}.\n`));
     }
@@ -99,11 +83,11 @@ console.log(chalk.yellow('Внимание. Настоятельно реком�
 
         try {
             await browser.goto(link).wait('.full_screen');
-    
+
             var erlyFronts = await browser.evaluate(() => document.getElementsByClassName('full_screen')[0].firstChild.src);
-            
+
             await browser.goto(erlyFronts).wait('video');
-            
+
             var m3u8Link = await browser.evaluate(() => document.getElementsByTagName('video')[0].firstChild.src);
             var lessonName = await browser.evaluate(() => document.querySelector('[class^="Header__name__"]').innerText);
             var erlyOrigin = await browser.evaluate(() => location.origin);
@@ -118,7 +102,7 @@ console.log(chalk.yellow('Внимание. Настоятельно реком�
             console.log(`Трейсбек: \n ${err}`);
             console.log('=========\n');
             counter++;
-            
+
             continue;
 
         }

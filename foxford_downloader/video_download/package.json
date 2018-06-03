@@ -4,16 +4,15 @@
   "description": "Downloader utility for foxford courses",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "postinstall": "npm ddp"
+    "start": "node index.js"
   },
   "author": "Marise Hayashi <@limitedeternity> (https://limitedeternity.github.io/)",
   "license": "MIT",
   "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.0.15",
     "chalk": "^2.4.1",
     "chromeless": "^1.5.1",
     "cli-interact": "^0.1.9",
-    "ffbinaries": "^1.1.0",
     "slug": "^0.9.1"
   }
 }
