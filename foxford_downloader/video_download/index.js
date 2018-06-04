@@ -42,7 +42,6 @@ console.log(chalk.yellow('Внимание. Настоятельно реком�
         process.exit(0);
     }
 
-    var counter = 1;
     var linkList = [...new Set(fs.readFileSync(linksFile, 'utf8').replace(/\r\n/g, "\r").replace(/\n/g, "\r").split(/\r/).filter(Boolean))];
 
     if (linkList.length === 0) {
@@ -63,7 +62,7 @@ console.log(chalk.yellow('Внимание. Настоятельно реком�
         let minutes = ('0' + time.getMinutes()).slice(-2);
         let seconds = ('0' + time.getSeconds()).slice(-2);
 
-        console.log(chalk.green(`Ссылок загружено: ${linkList.length}. Скачивание начато в ${hours}:${minutes}:${seconds}\n`));
+        console.log(chalk.green(`Ссылок загружено: ${linkList.length}. Процесс запущен в ${hours}:${minutes}:${seconds}`));
     }
 
     if (linkList.length > 1) {
@@ -77,14 +76,16 @@ console.log(chalk.yellow('Внимание. Настоятельно реком�
         var processList = [];
     }
 
-    console.log('=========\n');
+    console.log('\n=========\n');
+
+    var counter = 1;
 
     for (const link of linkList) {
         if (isMultiprocess) {
             console.log(chalk.blue(`Готовлюсь к добавлению в очередь видео по ссылке #${counter}...`));
 
         } else {
-            console.log(chalk.blue(`Готовлюсь к скачиванию видео по ссылке #${counter}...`));
+            console.log(chalk.blue('Готовлюсь к скачиванию видео...\n'));
         }
 
         try {
@@ -105,44 +106,48 @@ console.log(chalk.yellow('Внимание. Настоятельно реком�
 
         } catch (err) {
             console.log(chalk.red('Обнаружена проблема при получении видео. Беру следующее...'));
-            console.log(`Трейсбек: \n ${err}`);
-            console.log('=========\n');
+            console.log(`Трейсбек: \n ${err} \n`);
             counter++;
 
             continue;
-
         }
 
-        var filename = `${slug(lessonName)}.mp4`;
-
         if (!isMultiprocess) {
-            console.log(chalk.green(`Скачиваю видео по ссылке #${counter}... Это займет какое-то время.`));
+            console.log(chalk.green('Скачиваю видео... Это займет какое-то время.\n'));
+
+            let filename = `${slug(lessonName)}.mp4`;
             await exec(`${ffmpegBin} -hide_banner -nostats -loglevel panic -timeout 5000000 -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -headers "Authorization: ${authToken}" -headers "Referer: ${erlyFronts}" -headers "Origin: ${erlyOrigin}" -user_agent "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1" -i "${m3u8Link}" -bsf:a aac_adtstoasc -c copy ${filename}`, {
                 maxBuffer: Infinity
             });
 
-            console.log(chalk.green(`Скачивание видео #${counter} завершено! Сохранено в ${filename}`));
+            console.log(chalk.green(`Скачивание видео завершено! Сохранено в ${filename}`));
 
         } else {
             processList.push(
-                exec(`${ffmpegBin} -hide_banner -nostats -loglevel panic -timeout 5000000 -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -headers "Authorization: ${authToken}" -headers "Referer: ${erlyFronts}" -headers "Origin: ${erlyOrigin}" -user_agent "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1" -i "${m3u8Link}" -bsf:a aac_adtstoasc -c copy ${filename}`, {
-                    maxBuffer: Infinity
+              new Promise(async (resolve) => {
+                let filename = `${slug(lessonName)}.mp4`;
 
-                }).then(() => {
-                    console.log(chalk.green('...✓'));
-                })
+                await exec(`${ffmpegBin} -hide_banner -nostats -loglevel panic -timeout 5000000 -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -headers "Authorization: ${authToken}" -headers "Referer: ${erlyFronts}" -headers "Origin: ${erlyOrigin}" -user_agent "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1" -i "${m3u8Link}" -bsf:a aac_adtstoasc -c copy ${filename}`, {
+                  maxBuffer: Infinity
+                });
+
+                resolve(filename);
+
+              }).then((filename) => {
+                console.log(chalk.green(`${filename} ...✓`));
+              })
             );
 
-            console.log(chalk.green(`Видео #${counter} добавлено в очередь! Будет сохранено в ${filename}`));
+            console.log(chalk.green(`Видео #${counter} добавлено в очередь! Будет сохранено в ${slug(lessonName)}.mp4\n`));
         }
 
-        console.log('=========\n');
         counter++;
     }
 
     await browser.end();
 
     if (isMultiprocess) {
+        console.log('=========\n');
         console.log(chalk.green('Скачивание видео запущено. Это займет какое-то время.\n'));
         await Promise.all(processList);
     }
