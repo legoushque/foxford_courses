@@ -43,7 +43,7 @@ console.log(chalk.yellow('Внимание. Настоятельно реком�
     }
 
     var counter = 1;
-    var linkList = fs.readFileSync(linksFile, 'utf8').replace(/\r\n/g, "\r").replace(/\n/g, "\r").split(/\r/).filter(Boolean);
+    var linkList = [...new Set(fs.readFileSync(linksFile, 'utf8').replace(/\r\n/g, "\r").replace(/\n/g, "\r").split(/\r/).filter(Boolean))];
 
     if (linkList.length === 0) {
         console.log(chalk.red('Ссылки не загружены'));
