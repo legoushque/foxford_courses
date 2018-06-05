@@ -9,7 +9,7 @@ const query = require("cli-interact").getYesNo;
 const slug = require("slug");
 const axios = require("axios");
 
-var linksFile = __dirname + '/links.txt';
+var linksFile = 'links.txt';
 var ffmpegBin = ffmpeg.path;
 
 const linksReader = () => {
