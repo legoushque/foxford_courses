@@ -321,7 +321,7 @@ https://itunes.apple.com/us/app/foksford.ucebnik/id930911649?l=ru&ls=1&mt=8
 
 **Основные ударения для ЕГЭ по русскому можно отработать здесь:**
 
-https://repl.it/repls/RequiredVigorousCones
+https://repl.it/repls/UnhealthyTrivialTechnology
 
 --------------------------
 
