@@ -266,10 +266,10 @@ const runDownloader = async (linkList, isMp4Exists) => {
 
     let linkList = linksReader();
 
-    console.log(chalk.green('Запускаю проверку...'));
+    console.log(chalk.green('Запускаю проверку...\n'));
     let { isMp4Exists, isAuthFixed } = await situationChecker(linkList[0]);
 
-    console.log(chalk.green('\nПроверка завершена.\n'));
+    console.log(chalk.green('Проверка завершена.\n'));
 
     isAuthFixed ? authFixedDownloader(linkList, isMp4Exists) : runDownloader(linkList, isMp4Exists);
 })();
