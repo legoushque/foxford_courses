@@ -130,7 +130,7 @@ const authFixedDownloader = async (linkList, isMp4Exists) => {
         let lastDigits = linkSplit[linkSplit.length - 1];
         let firstTwo = lastDigits.split(0, 2);
         let trailingDigits = lastDigits.split(2);
-        let updatedFirstTwo = String(Number(firstTwo) + 22);
+        let updatedFirstTwo = String(Number(firstTwo) + 12);
 
         var webinarId = updatedFirstTwo + trailingDigits;
         var lessonName = await browser.evaluate(() => document.querySelector('[class^="Header__name__"]').innerText);
