@@ -96,7 +96,7 @@ const situationChecker = async link => {
   return { isMp4Exists, isAuthFixed };
 };
 
-const authFixedDownloader = async (linkList, isMp4Exists) => {
+const authFixedDownloader = async ({linkList, isMp4Exists}) => {
   let browser = new Chromeless({
       scrollBeforeClick: true,
       launchChrome: true
@@ -191,7 +191,7 @@ const authFixedDownloader = async (linkList, isMp4Exists) => {
   console.log(chalk.green(`\nЗагрузка завершена в ${hoursEnd}:${minutesEnd}:${secondsEnd}\n`));
 };
 
-const runDownloader = async (linkList, isMp4Exists) => {
+const runDownloader = async ({linkList, isMp4Exists}) => {
   console.log(chalk.yellow('Видео будут пронумерованы в том порядке, в котором они записаны в links.txt (начиная с нуля)'));
 
   let webinarIdList = linkList.map(link => {
@@ -271,5 +271,5 @@ const runDownloader = async (linkList, isMp4Exists) => {
 
     console.log(chalk.green('Проверка завершена.\n'));
 
-    isAuthFixed ? authFixedDownloader(linkList, isMp4Exists) : runDownloader(linkList, isMp4Exists);
+    isAuthFixed ? authFixedDownloader({linkList: linkList, isMp4Exists: isMp4Exists}) : runDownloader({linkList: linkList, isMp4Exists: isMp4Exists});
 })();
