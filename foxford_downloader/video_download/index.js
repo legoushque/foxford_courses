@@ -70,7 +70,7 @@ const situationChecker = async link => {
   }).catch(err => {
     if (err.response) {
       if (err.response.status === 404) {
-        console.log(chalk.red("Хранилище сменилось. Сообщите разработчику."));
+        console.log(chalk.red("Первая ссылка вернула 404. Проверьте корректность ссылки. Если считаете, что это ошибка, сообщите разработчику."));
         process.exit(1);
 
       } else {
