@@ -152,14 +152,22 @@ const authFixedDownloader = async ({linkList, isMp4Exists}) => {
         let filename = `${slug(lessonName)}.mp4`;
 
         if (isMp4Exists) {
-          await exec(`${ffmpegBin} -hide_banner -nostats -loglevel panic -timeout 5000000 -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -headers "Authorization: ${authToken}" -headers "Referer: ${erlyFronts}" -headers "Origin: ${erlyOrigin}" -user_agent "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1" -i "https://media-store-n.foxford.ru/api/v1/buckets/ms.webinar.foxford.ru/objects/${webinarId}.mp4" -c copy ${filename}`, {
+          let { stderr } = await exec(`${ffmpegBin} -hide_banner -nostats -loglevel panic -timeout 5000000 -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -headers "Authorization: ${authToken}" -headers "Referer: ${erlyFronts}" -headers "Origin: ${erlyOrigin}" -user_agent "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1" -i "https://media-store-n.foxford.ru/api/v1/buckets/ms.webinar.foxford.ru/objects/${webinarId}.mp4" -c copy ${filename}`, {
             maxBuffer: Infinity
           });
 
+          if (stderr) {
+            console.log(chalk.red(stderr));
+          }
+
         } else {
-          await exec(`${ffmpegBin} -hide_banner -nostats -loglevel panic -timeout 5000000 -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -headers "Authorization: ${authToken}" -headers "Referer: ${erlyFronts}" -headers "Origin: ${erlyOrigin}" -user_agent "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1" -i "https://media-store-n.foxford.ru/api/v1/buckets/hls.webinar.foxford.ru/objects/${webinarId}.master.m3u8" -bsf:a aac_adtstoasc -c copy ${filename}`, {
+          let { stderr } = await exec(`${ffmpegBin} -hide_banner -nostats -loglevel panic -timeout 5000000 -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -headers "Authorization: ${authToken}" -headers "Referer: ${erlyFronts}" -headers "Origin: ${erlyOrigin}" -user_agent "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1" -i "https://media-store-n.foxford.ru/api/v1/buckets/hls.webinar.foxford.ru/objects/${webinarId}.master.m3u8" -bsf:a aac_adtstoasc -c copy ${filename}`, {
             maxBuffer: Infinity
           });
+
+          if (stderr) {
+            console.log(chalk.red(stderr));
+          }
         }
 
         resolve(filename);
@@ -214,9 +222,13 @@ const runDownloader = async ({linkList, isMp4Exists}) => {
 
           let filename = `${counter}.mp4`;
 
-          await exec(`${ffmpegBin} -hide_banner -nostats -loglevel panic -timeout 5000000 -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -user_agent "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1" -i "https://media-store-n.foxford.ru/api/v1/buckets/ms.webinar.foxford.ru/objects/${webinarId}.mp4" -c copy ${filename}`, {
+          let { stderr } = await exec(`${ffmpegBin} -hide_banner -nostats -loglevel panic -timeout 5000000 -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -user_agent "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1" -i "https://media-store-n.foxford.ru/api/v1/buckets/ms.webinar.foxford.ru/objects/${webinarId}.mp4" -c copy ${filename}`, {
             maxBuffer: Infinity
           });
+
+          if (stderr) {
+            console.log(chalk.red(stderr));
+          }
 
           resolve(filename);
 
@@ -230,9 +242,13 @@ const runDownloader = async ({linkList, isMp4Exists}) => {
         new Promise(async resolve => {
           let filename = `${counter}.mp4`;
 
-          await exec(`${ffmpegBin} -hide_banner -nostats -loglevel panic -timeout 5000000 -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -user_agent "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1" -i "https://media-store-n.foxford.ru/api/v1/buckets/hls.webinar.foxford.ru/objects/${webinarId}.master.m3u8" -bsf:a aac_adtstoasc -c copy ${filename}`, {
+          let { stderr } = await exec(`${ffmpegBin} -hide_banner -nostats -loglevel panic -timeout 5000000 -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -user_agent "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1" -i "https://media-store-n.foxford.ru/api/v1/buckets/hls.webinar.foxford.ru/objects/${webinarId}.master.m3u8" -bsf:a aac_adtstoasc -c copy ${filename}`, {
             maxBuffer: Infinity
           });
+
+          if (stderr) {
+            console.log(chalk.red(stderr));
+          }
 
           resolve(filename);
 
