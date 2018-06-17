@@ -26,7 +26,13 @@ const linksReader = () => {
       process.exit(0);
   }
 
-  let linkList = [...new Set(fs.readFileSync(linksFile, 'utf8').replace(/\r\n/g, "\r").replace(/\n/g, "\r").split(/\r/).filter(Boolean))];
+  let linkList = fs.readFileSync(linksFile, 'utf8')
+                  .replace(/\r\n/g, "\r")
+                  .replace(/\n/g, "\r")
+                  .split(/\r/)
+                  .filter(Boolean)
+                  |> (filteredList => new Set(filteredList))
+                  |> (uniqueList => [...uniqueList]);
 
   if (linkList.length === 0) {
       console.log(chalk.red('Ссылки не загружены'));
@@ -43,7 +49,7 @@ const linksReader = () => {
   }
 };
 
-const downloader = async ({ linkList }) => {
+const downloader = async ({ linkList, downloadMp4 }) => {
   let browser = new Chromeless({
       scrollBeforeClick: true,
       launchChrome: true
@@ -69,11 +75,21 @@ const downloader = async ({ linkList }) => {
     try {
         await browser.goto(link).wait('.full_screen');
         var erlyFronts = await browser.evaluate(() => document.querySelector('.full_screen').firstChild.src);
-        var erlyOrigin = (new URL(erlyFronts)).origin;
+        var erlyOrigin = new URL(erlyFronts).origin;
 
         await browser.goto(erlyFronts).wait('video > source');
         var lessonName = await browser.evaluate(() => document.querySelector('[class^="Header__name__"]').innerText);
-        var videoLink = await browser.evaluate(() => document.querySelector("video > source").src);
+        var m3u8Link = await browser.evaluate(() => document.querySelector("video > source").src);
+        var mp4Link = m3u8Link
+                        |> (m3u8Link => new URL(m3u8Link))
+                        |> (urlObj => {
+                              urlObj.pathname = urlObj
+                                                  .pathname
+                                                  .replace("hls.", "ms.")
+                                                  .replace(".master.m3u8", ".mp4");
+                              return urlObj;
+                           })
+                        |> (modUrlObj => modUrlObj.href)
 
         await browser.setHtml('<h1 style="text-align:center;">Теперь это окно можно свернуть</h1>').evaluate(() => {
             console.log('Operation chain finished!');
@@ -89,12 +105,15 @@ const downloader = async ({ linkList }) => {
       new Promise(async resolve => {
         let filename = `${slug(lessonName)}.mp4`;
 
-        let { stderr } = await exec(`${ffmpegBin} -hide_banner -nostats -loglevel panic -timeout 5000000 -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -headers "Referer: ${erlyFronts}" -headers "Origin: ${erlyOrigin}" -user_agent "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1" -i "${videoLink}" -bsf:a aac_adtstoasc -c copy ${filename}`, {
-          maxBuffer: Infinity
-        });
+        if (downloadMp4) {
+          await exec(`${ffmpegBin} -hide_banner -nostats -loglevel panic -timeout 5000000 -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -headers "Referer: ${erlyFronts}" -headers "Origin: ${erlyOrigin}" -user_agent "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1" -i "${mp4Link}" -c copy ${filename}`, {
+            maxBuffer: Infinity
+          });
 
-        if (stderr) {
-          console.log(chalk.red(stderr));
+        } else {
+          await exec(`${ffmpegBin} -hide_banner -nostats -loglevel panic -timeout 5000000 -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -headers "Referer: ${erlyFronts}" -headers "Origin: ${erlyOrigin}" -user_agent "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1" -i "${m3u8Link}" -bsf:a aac_adtstoasc -c copy ${filename}`, {
+            maxBuffer: Infinity
+          });
         }
 
         resolve(filename);
@@ -130,5 +149,5 @@ const downloader = async ({ linkList }) => {
     console.log(chalk.yellow('Внимание. Настоятельно рекомендуется использовать VPN, чтобы избежать проблем, возникающих во время бесчинств РКН.\n'));
 
     let linkList = linksReader();
-    downloader({ linkList: linkList });
+    downloader({ linkList: linkList, downloadMp4: true });
 })();

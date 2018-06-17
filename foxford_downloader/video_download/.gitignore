@@ -3,3 +3,5 @@ links.txt
 data/
 ffmpeg*
 *.mp4
+output.js
+package-lock.json
