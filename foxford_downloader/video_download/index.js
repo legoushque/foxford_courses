@@ -10,6 +10,12 @@ const slug = require("slug");
 var linksFile = 'links.txt';
 var ffmpegBin = ffmpeg.path;
 
+const args = process.argv.slice(2).reduce((acc, arg) => {
+    let [k, v] = arg.split('=');
+    acc[k] = v === undefined ? true : /true|false/.test(v) ? v === 'true' : /[\d|\.]+/.test(v) ? Number(v) : v;
+    return acc;
+}, {});
+
 const linksReader = () => {
   if (fs.existsSync(linksFile)) {
       console.log(chalk.green('Links.txt найден.\n'));
@@ -149,5 +155,12 @@ const downloader = async ({ linkList, downloadMp4 }) => {
     console.log(chalk.yellow('Внимание. Настоятельно рекомендуется использовать VPN, чтобы избежать проблем, возникающих во время бесчинств РКН.\n'));
 
     let linkList = linksReader();
-    downloader({ linkList: linkList, downloadMp4: true });
+
+    if (args.hasOwnProperty('--m3u8')) {
+      downloader({ linkList: linkList, downloadMp4: false });
+
+    } else {
+      downloader({ linkList: linkList, downloadMp4: true });
+    }
+    
 })();
