@@ -104,7 +104,7 @@ const downloader = async ({ linkList, downloadMp4 }) => {
     } catch (err) {
         console.log(chalk.red('Обнаружена проблема при получении видео. Сообщите разработчику.'));
         console.log(`Трейсбек: \n ${err} \n`);
-        continue;
+        process.exit(1);
     }
 
     processList.push(
@@ -162,5 +162,5 @@ const downloader = async ({ linkList, downloadMp4 }) => {
     } else {
       downloader({ linkList: linkList, downloadMp4: true });
     }
-    
+
 })();
