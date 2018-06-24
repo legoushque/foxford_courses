@@ -52,7 +52,7 @@ const linksReader = () => {
       process.exit(1);
   }
 
-  if (!linkList.every(elem => { return Boolean(elem.match(/^https:\/\/foxford\.ru\/groups\/\d{3,6}$/)) })) {
+  if (!linkList.every(elem => { return /^https:\/\/foxford\.ru\/groups\/\d{3,6}$/.test(elem) })) {
       console.log(chalk.red('Одна или несколько ссылок не прошли проверку на корректность.'));
       process.exit(1);
 
