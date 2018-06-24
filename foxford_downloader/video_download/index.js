@@ -1,8 +1,7 @@
 const ffmpeg = require('@ffmpeg-installer/ffmpeg');
 const fs = require("fs");
-const util = require("util");
 const { Chromeless } = require("chromeless");
-const exec = util.promisify(require("child_process").exec);
+const exec = require("child_process").exec;
 const chalk = require("chalk");
 const query = require("cli-interact").getYesNo;
 const slug = require("slug");
@@ -12,9 +11,17 @@ var ffmpegBin = ffmpeg.path;
 
 const args = process.argv.slice(2).reduce((acc, arg) => {
     let [k, v] = arg.split('=');
-    acc[k] = v === undefined ? true : /true|false/.test(v) ? v === 'true' : /[\d|\.]+/.test(v) ? Number(v) : v;
+    acc[k] = v === undefined ? true : /true|false/.test(v) ? v === 'true' : /(^[-+]?\d+\.\d+$)|(?<=\s|^)[-+]?\d+(?=\s|$)/.test(v) ? Number(v) : v;
     return acc;
 }, {});
+
+const executeCommand = cmd => {
+  return new Promise(resolve => {
+    exec(cmd, { maxBuffer: Infinity }, (error, stdout, stderr) => {
+      error ? resolve({ stderr: stderr, stdout: stdout }) : resolve({ stderr: null, stdout: stdout });
+    });
+  });
+};
 
 const linksReader = () => {
   if (fs.existsSync(linksFile)) {
@@ -45,7 +52,7 @@ const linksReader = () => {
       process.exit(1);
   }
 
-  if (!linkList.every((elem) => { return Boolean(elem.match(/^https:\/\/foxford\.ru\/groups\/\d{3,6}$/)) })) {
+  if (!linkList.every(elem => { return Boolean(elem.match(/^https:\/\/foxford\.ru\/groups\/\d{3,6}$/)) })) {
       console.log(chalk.red('Одна или несколько ссылок не прошли проверку на корректность.'));
       process.exit(1);
 
@@ -112,14 +119,18 @@ const downloader = async ({ linkList, downloadMp4 }) => {
         let filename = `${slug(lessonName)}.mp4`;
 
         if (downloadMp4) {
-          await exec(`${ffmpegBin} -hide_banner -nostats -loglevel panic -timeout 5000000 -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -headers "Referer: ${erlyFronts}" -headers "Origin: ${erlyOrigin}" -user_agent "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1" -i "${mp4Link}" -c copy ${filename}`, {
-            maxBuffer: Infinity
-          });
+          let { stderr, stdout } = await executeCommand(`${ffmpegBin} -hide_banner -nostats -loglevel error -timeout 5000000 -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -headers "Referer: ${erlyFronts}" -headers "Origin: ${erlyOrigin}" -user_agent "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1" -i "${mp4Link}" -c copy ${filename}`);
+
+          if (stderr) {
+            console.log(chalk.yellow(`Загрузка файла ${filename} завершилась с ошибкой. \n Трейсбек: ${stderr}. \n Попробуйте перезапустить программу, использовав вместо "npm start" "npm run m3u8dl".`));
+          }
 
         } else {
-          await exec(`${ffmpegBin} -hide_banner -nostats -loglevel panic -timeout 5000000 -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -headers "Referer: ${erlyFronts}" -headers "Origin: ${erlyOrigin}" -user_agent "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1" -i "${m3u8Link}" -bsf:a aac_adtstoasc -c copy ${filename}`, {
-            maxBuffer: Infinity
-          });
+          let { stderr, stdout } = await executeCommand(`${ffmpegBin} -hide_banner -nostats -loglevel error -timeout 5000000 -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -headers "Referer: ${erlyFronts}" -headers "Origin: ${erlyOrigin}" -user_agent "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1" -i "${m3u8Link}" -bsf:a aac_adtstoasc -c copy ${filename}`);
+
+          if (stderr) {
+            console.log(chalk.yellow(`Загрузка файла ${filename} завершилась с ошибкой. \n Трейсбек: ${stderr}. \n Сообщите разработчику.`));
+          }
         }
 
         resolve(filename);
@@ -153,6 +164,8 @@ const downloader = async ({ linkList, downloadMp4 }) => {
 (() => {
     console.log(chalk.magenta('Coded by @limitedeternity. \n'));
     console.log(chalk.yellow('Внимание. Настоятельно рекомендуется использовать VPN, чтобы избежать проблем, возникающих во время бесчинств РКН.\n'));
+
+    require("events").EventEmitter.prototype._maxListeners = Infinity;
 
     let linkList = linksReader();
 
