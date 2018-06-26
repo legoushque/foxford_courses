@@ -29,7 +29,7 @@ const linksReader = () => {
 
   } else {
       fs.closeSync(fs.openSync(linksFile, 'w'));
-      console.log(chalk.yellow('Links.txt создан. \n'));
+      console.log(chalk.yellow('Links.txt создан.\n'));
   }
 
   console.log(chalk.yellow('Соберите ссылки на видео вида "https://foxford.ru/groups/<id>" и положите их в links.txt\n'));
