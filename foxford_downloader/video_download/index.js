@@ -66,7 +66,7 @@ const downloader = async ({ linkList, downloadMp4 }) => {
   let browser = new Chromeless({
       scrollBeforeClick: true,
       launchChrome: true,
-      waitTimeout: 99999
+      waitTimeout: 10000 * 1000 // 10k seconds
   });
 
   await browser.goto('https://foxford.ru/user/login?redirect=/dashboard').evaluate(() => {
@@ -166,7 +166,7 @@ const downloader = async ({ linkList, downloadMp4 }) => {
     console.log(chalk.magenta('Coded by @limitedeternity. \n'));
     console.log(chalk.yellow('Внимание. Настоятельно рекомендуется использовать VPN, чтобы избежать проблем, возникающих во время бесчинств РКН.\n'));
 
-    require("events").EventEmitter.prototype._maxListeners = Infinity;
+    require("events").EventEmitter.prototype._maxListeners = 50;
 
     let linkList = linksReader();
 
