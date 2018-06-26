@@ -65,7 +65,8 @@ const linksReader = () => {
 const downloader = async ({ linkList, downloadMp4 }) => {
   let browser = new Chromeless({
       scrollBeforeClick: true,
-      launchChrome: true
+      launchChrome: true,
+      waitTimeout: 99999
   });
 
   await browser.goto('https://foxford.ru/user/login?redirect=/dashboard').evaluate(() => {
@@ -119,14 +120,14 @@ const downloader = async ({ linkList, downloadMp4 }) => {
         let filename = `${slug(lessonName)}.mp4`;
 
         if (downloadMp4) {
-          let { stderr, stdout } = await executeCommand(`${ffmpegBin} -hide_banner -nostats -loglevel error -timeout 5000000 -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -headers "Referer: ${erlyFronts}" -headers "Origin: ${erlyOrigin}" -user_agent "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1" -i "${mp4Link}" -c copy ${filename}`);
+          let { stderr, stdout } = await executeCommand(`${ffmpegBin} -hide_banner -nostats -loglevel error -timeout 5000000 -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -headers "Referer: ${erlyFronts}" -headers "Origin: ${erlyOrigin}" -user_agent "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36" -i "${mp4Link}" -c copy ${filename}`);
 
           if (stderr) {
             console.log(chalk.yellow(`Загрузка файла ${filename} завершилась с ошибкой. \n Трейсбек: ${stderr}. \n Попробуйте перезапустить программу, использовав вместо "npm start" "npm run m3u8dl".`));
           }
 
         } else {
-          let { stderr, stdout } = await executeCommand(`${ffmpegBin} -hide_banner -nostats -loglevel error -timeout 5000000 -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -headers "Referer: ${erlyFronts}" -headers "Origin: ${erlyOrigin}" -user_agent "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1" -i "${m3u8Link}" -bsf:a aac_adtstoasc -c copy ${filename}`);
+          let { stderr, stdout } = await executeCommand(`${ffmpegBin} -hide_banner -nostats -loglevel error -timeout 5000000 -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -headers "Referer: ${erlyFronts}" -headers "Origin: ${erlyOrigin}" -user_agent "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36" -i "${m3u8Link}" -bsf:a aac_adtstoasc -c copy ${filename}`);
 
           if (stderr) {
             console.log(chalk.yellow(`Загрузка файла ${filename} завершилась с ошибкой. \n Трейсбек: ${stderr}. \n Сообщите разработчику.`));
