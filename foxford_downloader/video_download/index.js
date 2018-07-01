@@ -84,7 +84,7 @@ const downloader = async ({ linkList, downloadMp4 }) => {
   let processList = [];
 
   for (let [counter, link] of linkList.entries()) {
-    console.log(chalk.blue(`Готовлюсь к добавлению в очередь видео по ссылке #${counter}...`));
+    console.log(chalk.blue(`Готовлюсь к добавлению в очередь видео по ссылке #${counter + 1}...`));
 
     try {
         await browser.goto(link).wait('.full_screen');
@@ -120,14 +120,14 @@ const downloader = async ({ linkList, downloadMp4 }) => {
         let filename = `${slug(lessonName)}.mp4`;
 
         if (downloadMp4) {
-          let { stderr, stdout } = await executeCommand(`${ffmpegBin} -hide_banner -nostats -loglevel error -timeout 5000000 -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -headers "Referer: ${erlyFronts}" -headers "Origin: ${erlyOrigin}" -user_agent "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36" -i "${mp4Link}" -c copy ${filename}`);
+          let { stderr, stdout } = await executeCommand(`${ffmpegBin} -hide_banner -nostats -loglevel error -multiple_requests 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 30 -headers "Referer: ${erlyFronts}" -headers "Origin: ${erlyOrigin}" -user_agent "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36" -i "${mp4Link}" -c copy ${filename}`);
 
           if (stderr) {
             console.log(chalk.yellow(`Загрузка файла ${filename} завершилась с ошибкой. \n Трейсбек: ${stderr}. \n Попробуйте перезапустить программу, использовав вместо "npm start" "npm run m3u8dl".`));
           }
 
         } else {
-          let { stderr, stdout } = await executeCommand(`${ffmpegBin} -hide_banner -nostats -loglevel error -timeout 5000000 -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -headers "Referer: ${erlyFronts}" -headers "Origin: ${erlyOrigin}" -user_agent "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36" -i "${m3u8Link}" -bsf:a aac_adtstoasc -c copy ${filename}`);
+          let { stderr, stdout } = await executeCommand(`${ffmpegBin} -hide_banner -nostats -loglevel error -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 30 -headers "Referer: ${erlyFronts}" -headers "Origin: ${erlyOrigin}" -user_agent "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36" -i "${m3u8Link}" -bsf:a aac_adtstoasc -c copy ${filename}`);
 
           if (stderr) {
             console.log(chalk.yellow(`Загрузка файла ${filename} завершилась с ошибкой. \n Трейсбек: ${stderr}. \n Сообщите разработчику.`));
@@ -141,7 +141,7 @@ const downloader = async ({ linkList, downloadMp4 }) => {
       })
     );
 
-    console.log(chalk.green(`Видео #${counter} добавлено в очередь! Будет сохранено в ${slug(lessonName)}.mp4\n`));
+    console.log(chalk.green(`Видео #${counter + 1} добавлено в очередь! Будет сохранено в ${slug(lessonName)}.mp4\n`));
   }
 
   await browser.end();
