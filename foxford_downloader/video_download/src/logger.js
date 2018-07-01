@@ -6,7 +6,7 @@ module.exports = class {
     this.logFile = path.join(process.cwd(), 'log.txt');
   }
 
-  logLine({ counter, baseLink, mp4Link, m3u8Link }) {
+  logDetails({ counter, baseLink, mp4Link, m3u8Link }) {
     fs.appendFileSync(this.logFile,
       `
       ✨ Link #${counter + 1} details:

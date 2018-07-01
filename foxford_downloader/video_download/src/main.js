@@ -50,7 +50,7 @@ const download = async ({ linkList, downloadMp4 }) => {
                            })
                         |> (modUrlObj => modUrlObj.href)
 
-        utils.logger.logLine({ counter: counter, baseLink: link, mp4Link: mp4Link, m3u8Link: m3u8Link });
+        utils.logger.logDetails({ counter: counter, baseLink: link, mp4Link: mp4Link, m3u8Link: m3u8Link });
 
     } catch (err) {
         console.log(chalk.red('Обнаружена проблема при получении видео. Сообщите разработчику.'));
