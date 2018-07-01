@@ -3,10 +3,10 @@ const logger = require("./logger");
 const linkReader = require("./linkReader");
 
 var lr = new linkReader();
-var log = new logger();
+var lg = new logger();
 
 module.exports = {
-  logger: log,
+  logger: lg,
 
   linkReader: lr,
 
