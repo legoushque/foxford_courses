@@ -4,8 +4,8 @@
   "description": "Downloader utility for foxford courses",
   "main": "index.js",
   "scripts": {
-    "start": "babel index.js --out-file output.js && node output.js",
-    "m3u8dl": "babel index.js --out-file output.js && node output.js --m3u8"
+    "start": "babel src/ -d out && node out/main.js",
+    "m3u8dl": "babel src/ -d out && node out/main.js --m3u8"
   },
   "author": "Marise Hayashi <@limitedeternity> (https://limitedeternity.github.io/)",
   "license": "MIT",

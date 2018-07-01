@@ -1,7 +1,8 @@
 node_modules/
 links.txt
+log.txt
 data/
 ffmpeg*
 *.mp4
-output.js
+out/
 package-lock.json
