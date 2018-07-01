@@ -45,7 +45,7 @@ const download = async ({ linkList, downloadMp4 }) => {
                               urlObj.pathname = urlObj
                                                   .pathname
                                                   .replace("hls.", "ms.")
-                                                  .replace(".master.m3u8", ".mp4");
+                                                  .replace("master.m3u8", "mp4");
                               return urlObj;
                            })
                         |> (modUrlObj => modUrlObj.href)
