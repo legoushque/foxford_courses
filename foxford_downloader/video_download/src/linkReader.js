@@ -37,7 +37,7 @@ module.exports = class {
         console.log(chalk.green('links.txt найден.\n'));
 
     } else {
-        fs.closeSync(fs.openSync(linksFile, 'w'));
+        fs.closeSync(fs.openSync(this.linksFile, 'w'));
         console.log(chalk.yellow('links.txt создан.\n'));
     }
 
