@@ -1,4 +1,6 @@
 const ffmpeg = require('@ffmpeg-installer/ffmpeg');
+const fs = require("fs");
+const path = require("path");
 const { Chromeless } = require("chromeless");
 const chalk = require("chalk");
 const query = require("cli-interact").getYesNo;
@@ -33,8 +35,7 @@ const download = async ({ linkList, downloadMp4 }) => {
 
     try {
         await browser.goto(link).wait('.full_screen');
-        var erlyFronts = await browser.evaluate(() => document.querySelector('.full_screen').firstChild.src);
-        var erlyOrigin = new URL(erlyFronts).origin;
+        let erlyFronts = await browser.evaluate(() => document.querySelector('.full_screen').firstChild.src);
 
         await browser.goto(erlyFronts).wait('video > source');
         var lessonName = await browser.evaluate(() => document.querySelector('[class^="Header__name__"]').innerText);
@@ -63,17 +64,29 @@ const download = async ({ linkList, downloadMp4 }) => {
         let filename = `${slug(lessonName)}.mp4`;
 
         if (downloadMp4) {
-          let { stderr, stdout } = await utils.executeCommand(`${ffmpegBin} -hide_banner -nostats -loglevel error -multiple_requests 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 30 -headers "Referer: ${erlyFronts}" -headers "Origin: ${erlyOrigin}" -user_agent "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36" -i "${mp4Link}" -c copy ${filename}`);
+          let { error, writedTo } = await utils.fetchContents(mp4Link);
 
-          if (stderr) {
+          if (error) {
             console.log(chalk.yellow(`Загрузка файла ${filename} завершилась с ошибкой. \n Трейсбек: ${stderr}. \n Попробуйте перезапустить программу, использовав вместо "npm start" "npm run m3u8dl".`));
+
+          } else {
+            fs.renameSync(writedTo, path.join(process.cwd(), filename));
           }
 
         } else {
-          let { stderr, stdout } = await utils.executeCommand(`${ffmpegBin} -hide_banner -nostats -loglevel error -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 30 -headers "Referer: ${erlyFronts}" -headers "Origin: ${erlyOrigin}" -user_agent "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36" -i "${m3u8Link}" -bsf:a aac_adtstoasc -c copy ${filename}`);
+          let { error, writedTo } = await utils.fetchContents(m3u8Link);
 
-          if (stderr) {
-            console.log(chalk.yellow(`Загрузка файла ${filename} завершилась с ошибкой. \n Трейсбек: ${stderr}. \n Сообщите разработчику.`));
+          if (error) {
+            console.log(chalk.yellow(`Загрузка плейлиста для ${filename} завершилась с ошибкой: ${error}`));
+
+          } else {
+            let { stderr, stdout } = await utils.executeCommand(`${ffmpegBin} -hide_banner -nostats -loglevel "error" -protocol_whitelist "file,http,https,tcp,tls,crypto" -i "${writedTo}" -bsf:a aac_adtstoasc -c copy -crf 18 ${path.join(process.cwd(), filename)}`);
+
+            if (stderr) {
+              console.log(chalk.yellow(`Загрузка файла ${filename} завершилась с ошибкой. \n Трейсбек: ${stderr}. \n Сообщите разработчику.`));
+            }
+
+            fs.unlinkSync(writedTo);
           }
         }
 
@@ -104,6 +117,7 @@ const download = async ({ linkList, downloadMp4 }) => {
   let secondsEnd = ('0' + timeEnd.getSeconds()).slice(-2);
 
   console.log(chalk.green(`\nЗагрузка завершена в ${hoursEnd}:${minutesEnd}:${secondsEnd}\n`));
+  process.exit(0);
 };
 
 (() => {

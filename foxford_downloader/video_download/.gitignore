@@ -4,5 +4,6 @@ log.txt
 data/
 ffmpeg*
 *.mp4
+*.m3u8
 out/
 package-lock.json
