@@ -1,5 +1,6 @@
 const exec = require("child_process").exec;
 const fs = require("fs");
+const crypto = require("crypto");
 const path = require("path");
 const axios = require("axios");
 const logger = require("./logger");
@@ -27,12 +28,12 @@ module.exports = {
     });
   },
 
-  fetchContents(url) {
+  fetchContents({ url, downloadMp4 }) {
     return new Promise(resolve => {
-      let destination = url
-                      |> (url => new URL(url))
-                      |> (urlObj => urlObj.pathname.split("/").pop())
-                      |> (filename => path.join(process.cwd(), filename))
+      let destination = crypto.randomBytes(10).toString('hex')
+                          |> (rand => downloadMp4 ? rand + ".mp4" : rand + ".m3u8")
+                          |> (filename => path.join(process.cwd(), filename))
+
       axios({
         method: 'GET',
         url: url,

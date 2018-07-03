@@ -64,7 +64,7 @@ const download = async ({ linkList, downloadMp4 }) => {
         let filename = `${slug(lessonName)}.mp4`;
 
         if (downloadMp4) {
-          let { error, writedTo } = await utils.fetchContents(mp4Link);
+          let { error, writedTo } = await utils.fetchContents({ url: mp4Link, downloadMp4: downloadMp4 });
 
           if (error) {
             console.log(chalk.yellow(`Загрузка файла ${filename} завершилась с ошибкой. \n Трейсбек: ${stderr}. \n Попробуйте перезапустить программу, использовав вместо "npm start" "npm run m3u8dl".`));
@@ -74,7 +74,7 @@ const download = async ({ linkList, downloadMp4 }) => {
           }
 
         } else {
-          let { error, writedTo } = await utils.fetchContents(m3u8Link);
+          let { error, writedTo } = await utils.fetchContents({ url: m3u8Link, downloadMp4: downloadMp4 });
 
           if (error) {
             console.log(chalk.yellow(`Загрузка плейлиста для ${filename} завершилась с ошибкой: ${error}`));
