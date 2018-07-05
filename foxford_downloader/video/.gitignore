@@ -1,0 +1,9 @@
+node_modules/
+links.txt
+credentials.db
+log.txt
+data/
+ffmpeg*
+*.mp4
+*.m3u8
+out/
