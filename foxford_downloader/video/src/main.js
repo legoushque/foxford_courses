@@ -29,7 +29,7 @@ const download = async ({ linkList }) => {
             .evaluate(() => console.log("Ready!"));
 
   } catch (err) {
-    console.log(chalk.red('Обнаружена проблема при входе. Сообщите разработчику.'));
+    console.log(chalk.red('Обнаружена проблема при входе.'));
     console.log(`Трейсбек: \n ${err} \n`);
     process.exit(1);
   }
@@ -60,9 +60,9 @@ const download = async ({ linkList }) => {
         utils.logger.logDetails({ counter: counter + 1, baseLink: link, mp4Link: mp4Link, m3u8Link: m3u8Link });
 
     } catch (err) {
-        console.log(chalk.red('Обнаружена проблема при получении видео. Сообщите разработчику.'));
+        console.log(chalk.red('Обнаружена проблема при получении видео.'));
         console.log(`Трейсбек: \n ${err} \n`);
-        process.exit(1);
+        continue;
     }
 
     processList.push(
@@ -78,7 +78,7 @@ const download = async ({ linkList }) => {
           let { stderr, stdout } = await utils.executeCommand(`${ffmpegBin} -hide_banner -nostats -loglevel "error" -protocol_whitelist "file,http,https,tcp,tls,crypto" -i "${writedTo}" -bsf:a aac_adtstoasc -c copy -crf 18 ${path.join(process.cwd(), filename)}`);
 
           if (stderr) {
-            console.log(chalk.yellow(`Загрузка файла ${filename} завершилась с ошибкой. \n Трейсбек: ${stderr}. \n Сообщите разработчику.`));
+            console.log(chalk.yellow(`Загрузка файла ${filename} завершилась с ошибкой. \n Трейсбек: ${stderr}. \n`));
           }
 
           fs.unlinkSync(writedTo);
