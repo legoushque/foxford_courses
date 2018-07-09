@@ -122,7 +122,7 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
 
 * [Обществознание. Подготовка к ЕГЭ](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5444303)
 
-* [Обществознание. Подготовка к олимпиадам:](https://mega.nz/#F!Vv4AmCpS!ClUpGarpD8yXyrx1MEoeLQ)
+* [Обществознание. Подготовка к олимпиадам](https://mega.nz/#F!Vv4AmCpS!ClUpGarpD8yXyrx1MEoeLQ)
 
 * [История. Подготовка к ЕГЭ](https://mega.nz/#F!NyxmnDzT!x9kTW9VsdY28oCT4KvNBBA)
 
@@ -208,6 +208,8 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
 
 * [Мини-курс по физике "Эксперементальный практикум по тепловым и электрическим явлениям"](https://cloud.mail.ru/public/5vvV/qWLiAi5kx)
 
+* [Мини-курс по физике "Разные подходы к решению задач по гидростатике"](https://cloud.mail.ru/public/JZCp/p3eiaBapy)
+
 * [Курс по программированию в среде "Swift Playgrounds"](https://yadi.sk/d/JMhZwtQO3Uf9aU)
 
 * Язык Python
@@ -235,6 +237,8 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
 * [Подготовка к олимпиадам по праву](https://yadi.sk/d/j5coXPRF3X2dwV)
 
 * Обществознание. Подготовка к ЕГЭ.
+
+* Обществознание. Подготовка к олимпиадам.
 
 
 </details>
