@@ -223,7 +223,7 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
 
 * [Русский язык. Экспресс-курс по подготовке к сочинению.](https://yadi.sk/d/P1Dv8v2V3WurE3)
 
-* [Русский язык. 1 часть.](https://cloud.mail.ru/public/JGSF/ua1PiryZy)
+* [Русский язык. 1 часть.](https://cloud.mail.ru/public/FUzJ/VHnP87BJT)
 
 * Русский язык. 1 часть - Экспресс.
 
