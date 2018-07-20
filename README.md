@@ -15,22 +15,22 @@
 <details>
 <summary>⚛️ <b>[Технические]</b></summary>
 
-* [Математика. Подготовка к ЕГЭ. Часть С](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5257235)
+* [Математика. Подготовка к ЕГЭ. Часть С](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01MjU3MjM1)
 
-* [Физика. Подготовка к ЕГЭ. Часть С](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5257249)
+* [Физика. Подготовка к ЕГЭ. Часть С](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01MjU3MjQ5)
 
-* [Информатика. Экспресс-подготовка к ЕГЭ](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5257220)
+* [Информатика. Экспресс-подготовка к ЕГЭ](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01MjU3MjIw)
 
-* [Алгебра. 10 класс](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5427254)
+* [Алгебра. 10 класс](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDI3MjU0)
 
-* [Геометрия. 10 класс](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5429370)
+* [Геометрия. 10 класс](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDI5Mzcw)
 
 </details>
 <br>
 <details>
 <summary>✊ <b>[Гуманитарные]</b></summary>
 
-* [Русский Язык. Подготовка к ЕГЭ. Сочинение](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5257263)
+* [Русский Язык. Подготовка к ЕГЭ. Сочинение](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01MjU3MjYz)
 
 * [Экспресс-курс. Учи английский легко.](https://cloud.mail.ru/public/6og2/YZeFbTwYT/)
 
@@ -51,76 +51,74 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
 <details>
 <summary>⚛️ <b>[Технические]</b></summary>
 
-* [Подготовка к ОГЭ. Физика](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5446633)
+* [Подготовка к ОГЭ. Физика](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ2NjMz)
 
-* [Подготовка к олимпиадам. Физика](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5446632)
+* [Подготовка к олимпиадам. Математика. 9 класс](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ2NjMy)
 
-* [Экспресс-подготовка к ОГЭ. Физика](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5446621)
+* [Экспресс-подготовка к ОГЭ. Физика](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ2NjIx)
 
-* [Подготовка к ОГЭ. Математика](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5446635)
+* [Подготовка к ОГЭ. Математика](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ2NjM1)
 
-* [Экспресс-подготовка к ОГЭ. Математика](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5446623)
+* [Экспресс-подготовка к ОГЭ. Математика](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ2NjIz)
 
-* [Подготовка к олимпиадам. Математика](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5446632)
+* [Углубленный курс. Алгебра](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ2NjI3)
 
-* [Углубленный курс. Алгебра](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5446627)
+* [Углубленный курс. Геометрия](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ2NjI2)
 
-* [Углубленный курс. Геометрия](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5446626)
+* [Подготовка к олимпиадам "Физтех" по математике](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDE4MTk2)
 
-* [Подготовка к олимпиадам "Физтех" по математике](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5418196)
+* [Подготовка к олимпиадам "Физтех" по физике](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQxMjQw)
 
-* [Подготовка к олимпиадам "Физтех" по физике](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5441240)
+* [Подготовка к олимпиадам по математике](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDE4MTA4)
 
-* [Подготовка к олимпиадам по математике](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5418108)
+* [Подготовка к олимпиадам по физике](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQyNjg3)
 
-* [Подготовка к олимпиадам по физике](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5442687)
+* [Программирование (9-11 классы). Подготовка к олимпиадам, базовый уровень](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0NDM3)
 
-* [Программирование (9-11 классы). Подготовка к олимпиадам, базовый уровень](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5444437)
+* [Программирование (9-11 классы). Подготовка к олимпиадам, продвинутый уровень](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDE3MzE0)
 
-* [Программирование (9-11 классы). Подготовка к олимпиадам, продвинутый уровень](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5417314)
+* [Математика. Подготовка к ЕГЭ / Часть С](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDE3ODg2)
 
-* [Математика. Подготовка к ЕГЭ / Часть С](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5417886)
+* [Математика. Экспресс-подготовка к ЕГЭ / Часть С](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0NTEw)
 
-* [Математика. Экспресс-подготовка к ЕГЭ / Часть С](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5444510)
+* [Математика. Экспресс-подготовка к ЕГЭ / Часть B](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0OTYw)
 
-* [Математика. Экспресс-подготовка к ЕГЭ / Часть B](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5444960)
+* [Физика. Экспресс-подготовка к ЕГЭ / Часть С](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0OTUz)
 
-* [Физика. Экспресс-подготовка к ЕГЭ / Часть С](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5444953)
+* [Физика. Экспресс-подготовка к ЕГЭ / Часть B](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0OTU0)
 
-* [Физика. Экспресс-подготовка к ЕГЭ / Часть B](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5444954)
+* [Информатика. Подготовка к ЕГЭ](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDE3ODA3)
 
-* [Информатика. Подготовка к ЕГЭ](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5417807)
+* [Изучение языков С и С++ / Язык С++](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDE3ODI4)
 
-* [Изучение языков С и С++ / Язык С++](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5417828)
+* [Web-программирование](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDE4NDM3)
 
-* [Web-программирование](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5418437)
-
-* [Программирование на языке Python](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5444423)
+* [Программирование на языке Python](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0NDIz)
 
 </details>
 <br>
 <details>
 <summary>✊ <b>[Гуманитарные]</b></summary>
 
-* [Подготовка к ОГЭ. Обществознание](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5446634)
+* [Подготовка к ОГЭ. Обществознание](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ2NjM0)
 
-* [Подготовка к олимпиадам. Обществознание](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5446630)
+* [Подготовка к олимпиадам. Обществознание](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ2NjMw)
 
-* [Русский язык. Подготовка к ЕГЭ. Часть 1](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5444409)
+* [Русский язык. Подготовка к ЕГЭ. Часть 1](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0NDA5)
 
-* [Русский язык. Экспресс-подготовка к ЕГЭ. Часть 1](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5444957)
+* [Русский язык. Экспресс-подготовка к ЕГЭ. Часть 1](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0OTU3)
 
-* [Русский язык. Сочинение. Экспресс-подготовка к ЕГЭ](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5444449)
+* [Русский язык. Сочинение. Экспресс-подготовка к ЕГЭ](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0NDQ5)
 
-* [Английский язык. Подготовка к ЕГЭ](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5444419)
+* [Английский язык. Подготовка к ЕГЭ](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0NDE5)
 
-* [Английский язык. Экспресс-подготовка к ЕГЭ](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5444434)
+* [Английский язык. Экспресс-подготовка к ЕГЭ](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0NDM0)
 
-* [Стань сильнее. Pre-Intermediate (A2-B1)](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5444412)
+* [Стань сильнее. Pre-Intermediate (A2-B1)](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0NDEy)
 
-* [Обществознание. Экспресс-подготовка к ЕГЭ](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5444307)
+* [Обществознание. Экспресс-подготовка к ЕГЭ](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0MzA3)
 
-* [Обществознание. Подготовка к ЕГЭ](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5444303)
+* [Обществознание. Подготовка к ЕГЭ](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0MzAz)
 
 * [Обществознание. Подготовка к олимпиадам](https://mega.nz/#F!Vv4AmCpS!ClUpGarpD8yXyrx1MEoeLQ)
 
@@ -131,24 +129,24 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
 <details>
 <summary>🔬 <b>[Естественно-научные]</b></summary>
 
-* [Биология. Подготовка к ЕГЭ](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5438805)
+* [Биология. Подготовка к ЕГЭ](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDM4ODA1)
 
-* [Биология. Экспресс-подготовка к ЕГЭ](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5444414)
+* [Биология. Экспресс-подготовка к ЕГЭ](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0NDE0)
 
-* [Биология. Подготовка к олимпиадам](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5445005)
+* [Биология. Подготовка к олимпиадам](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ1MDA1)
 
-* [Химия. Подготовка к ЕГЭ](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5441118)
+* [Химия. Подготовка к ЕГЭ](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQxMTE4)
 
-* [Химия. Подоготовка к олимпиадам](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5444426)
+* [Химия. Подоготовка к олимпиадам](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0NDI2)
 
-* [Химия. Экспресс-подготовка к ЕГЭ](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5444500)
+* [Химия. Экспресс-подготовка к ЕГЭ](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0NTAw)
 
 </details>
 <br>
 <details>
 <summary>💡 <b>[Другое]</b></summary>
 
-* [Словесность. Работа с информацией](https://unblocker-webapp.herokuapp.com/?url=https://rutracker.org/forum/viewtopic.php?t=5446832)
+* [Словесность. Работа с информацией](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ2ODMy)
 
 * -
 
