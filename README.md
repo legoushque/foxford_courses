@@ -221,7 +221,7 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
 
 * [Русский язык. Экспресс-курс по подготовке к сочинению.](https://yadi.sk/d/P1Dv8v2V3WurE3)
 
-* [Русский язык. 1 часть.](https://cloud.mail.ru/public/FUzJ/VHnP87BJT)
+* [Русский язык. 1 часть.](https://cloud.mail.ru/public/151p/52H17pYrV)
 
 * Русский язык. 1 часть - Экспресс.
 
@@ -251,6 +251,8 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
 * [Серия курсов "Эмоциональный интеллект" - "Научиться учиться" и "Навыки будущего"](https://cloud.mail.ru/public/ESjC/XxmDqZGsj)
 
 * [Основы информатики и программирования](https://cloud.mail.ru/public/DQUN/ZV3K6kVQ7)
+
+* [Эффективное мышление на основе ТРИЗ](https://cloud.mail.ru/public/AS7U/SsBGoVsJx)
 
 </details>
 <br>
