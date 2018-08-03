@@ -7,7 +7,7 @@
 
 *Сложность: средняя (для пользователей десктопов)*
 
-1. Установи Node.js (10+) и Chrome (60+).
+1. Установи [Node.js (Latest)](https://nodejs.org) и [Chrome (Canary)](https://www.google.com/chrome/canary/).
 
 2. [Склонируй репозиторий](https://github.com/limitedeternity/foxford_courses/archive/master.zip), распакуй архив в любое удобное место, перейди в проводнике сюда (в эту папку), после чего открой здесь терминал и выполни следующие команды:
 
