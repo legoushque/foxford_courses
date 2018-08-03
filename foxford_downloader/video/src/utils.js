@@ -5,8 +5,6 @@ const sqlite3 = require("sqlite3").verbose();
 const path = require("path");
 const { getYesNo, question } = require("cli-interact");
 const chalk = require("chalk");
-const request = require("request");
-const progress = require("request-progress");
 
 const Logger = require("./logger");
 const LinkReader = require("./linkReader");
@@ -70,38 +68,6 @@ module.exports = {
           process.exit(0);
         }
       }
-    });
-  },
-
-  fetchContents(url) {
-    return new Promise(resolve => {
-      let destination = crypto.randomBytes(20).toString('hex') // 256^20 unique values
-                          |> (rand => rand + ".m3u8")
-                          |> (filename => path.join(process.cwd(), filename));
-
-      let file = fs.createWriteStream(destination);
-
-      let response = progress(request({
-        method: 'GET',
-        uri: url,
-        headers: {
-          'Connection': 'keep-alive'
-        },
-        jar: true
-      }));
-
-      response.on('end', () => {
-        file.close(() => resolve({ error: null, writedTo: destination }));
-      });
-
-      response.on('error', err => {
-        file.close(() => {
-          fs.unlinkSync(destination);
-          resolve({ error: err, writedTo: null });
-        });
-      });
-
-      response.pipe(file);
     });
   }
 };

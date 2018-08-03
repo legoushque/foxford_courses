@@ -1,11 +1,10 @@
-const ffmpeg = require('@ffmpeg-installer/ffmpeg');
 const fs = require("fs");
 const path = require("path");
 const { Chromeless } = require("chromeless");
+const { Download } = require("easydownload");
 const chalk = require("chalk");
 const slug = require("slug");
 
-var ffmpegBin = ffmpeg.path;
 var utils = require("./utils");
 
 const download = async ({ linkList }) => {
@@ -45,8 +44,8 @@ const download = async ({ linkList }) => {
 
         await browser.goto(erlyFronts).wait('video > source').evaluate(() => console.log("Navigated!"));
         var lessonName = await browser.evaluate(() => document.querySelector('[class^="Header__name__"]').innerText);
-        var m3u8Link = await browser.evaluate(() => document.querySelector("video > source").src);
-        let mp4Link = m3u8Link
+        let m3u8Link = await browser.evaluate(() => document.querySelector("video > source").src);
+        var mp4Link = m3u8Link
                         |> (m3u8Link => new URL(m3u8Link))
                         |> (urlObj => {
                               urlObj.pathname = urlObj
@@ -66,25 +65,15 @@ const download = async ({ linkList }) => {
     }
 
     processList.push(
-      new Promise(async resolve => {
+      new Promise(resolve => {
         let filename = `${slug(lessonName)}.mp4`;
+        let dl = new Download(mp4Link, path.join(process.cwd(), filename));
 
-        let { error, writedTo } = await utils.fetchContents(m3u8Link);
+        dl.on('finish', () => {
+          resolve(filename);
+        });
 
-        if (error) {
-          console.log(chalk.yellow(`Загрузка плейлиста для ${filename} завершилась с ошибкой: ${error}`));
-
-        } else {
-          let { stderr, stdout } = await utils.executeCommand(`${ffmpegBin} -hide_banner -nostats -loglevel "error" -protocol_whitelist "file,http,https,tcp,tls,crypto" -i "${writedTo}" -bsf:a aac_adtstoasc -c copy -crf 18 ${path.join(process.cwd(), filename)}`);
-
-          if (stderr) {
-            console.log(chalk.yellow(`Загрузка файла ${filename} завершилась с ошибкой. \n Трейсбек: ${stderr}. \n`));
-          }
-
-          fs.unlinkSync(writedTo);
-        }
-
-        resolve(filename);
+        dl.start();
 
       }).then(filename => {
         console.log(chalk.green(`${filename} ...✓`));
