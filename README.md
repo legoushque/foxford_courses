@@ -236,7 +236,7 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
 
 * [Подготовка к олимпиадам по праву](https://yadi.sk/d/j5coXPRF3X2dwV)
 
-* Обществознание. Подготовка к ЕГЭ.
+* [Обществознание. Подготовка к ЕГЭ.](https://drive.google.com/drive/u/4/folders/1LQL1AYK5R0ZmqCUagDFPq8UWz2knyh1E)
 
 * Обществознание. Подготовка к олимпиадам.
 
