@@ -168,6 +168,8 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
     - [Презентации](https://mega.nz/#F!HXgwTLzQ!5VgTKJvGKh_3VxfNctx9HQ)
     - [Видео](https://mega.nz/#F!Ln40BSpa!ciyrGIRZhD6vsn-x0EMUUA)
 
+* Экспресс-подготовка к ЕГЭ. Математика. С-часть.
+
 * Подготовка к ЕГЭ. Физика. C-часть:
 
     - [Презентации](https://mega.nz/#F!bOp2FbrJ!eR7EbmgcBX82xEVJZpY4QA)
