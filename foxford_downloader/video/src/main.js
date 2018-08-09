@@ -125,5 +125,4 @@ const download = async ({ linkList }) => {
     utils.linkReader.promptLinks();
 
     download({ linkList: utils.linkReader.linkList });
-
 })();
