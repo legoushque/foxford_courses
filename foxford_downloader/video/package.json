@@ -15,7 +15,9 @@
     "chalk": "^2.4.1",
     "chromeless": "^1.5.1",
     "cli-interact": "^0.1.9",
-    "easydownload": "^1.0.7",
+    "forever-agent": "^0.6.1",
+    "request": "^2.87.0",
+    "request-progress": "^3.0.0",
     "slug": "^0.9.1",
     "sqlite3": "^4.0.2"
   }

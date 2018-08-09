@@ -1,7 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 const { Chromeless } = require("chromeless");
-const { Download } = require("easydownload");
+const request = require("request");
+const progress = require("request-progress");
 const chalk = require("chalk");
 const slug = require("slug");
 
@@ -75,17 +76,19 @@ const download = async ({ linkList }) => {
         processList.push(
             new Promise(resolve => {
                 let filename = `${slug(lessonName)}.mp4`;
-                let dl = new Download(mp4Link, path.join(process.cwd(), filename));
 
-                dl.on('finish', () => {
-                    resolve(filename);
-                });
-
-                dl.on('error', err => {
-                    throw err;
-                });
-
-                dl.start();
+                progress(request({
+                    uri: mp4Link,
+                    method: 'GET',
+                    headers: {
+                        'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.7 Safari/537.36'
+                    },
+                    jar: true,
+                    forever: true
+                }))
+                .on('error', err => throw err)
+                .on('end', () => resolve(filename))
+                .pipe(fs.createWriteStream(path.join(process.cwd(), filename)));
 
             }).then(filename => {
                 console.log(chalk.green(`${filename} ...✓`));
