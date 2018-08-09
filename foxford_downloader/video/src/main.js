@@ -74,7 +74,7 @@ const download = async ({ linkList }) => {
         }
 
         processList.push(
-            new Promise(resolve => {
+            new Promise((resolve, reject) => {
                 let filename = `${slug(lessonName)}.mp4`;
 
                 progress(request({
@@ -86,7 +86,7 @@ const download = async ({ linkList }) => {
                     jar: true,
                     forever: true
                 }))
-                .on('error', err => throw err)
+                .on('error', err => reject(err))
                 .on('end', () => resolve(filename))
                 .pipe(fs.createWriteStream(path.join(process.cwd(), filename)));
 
