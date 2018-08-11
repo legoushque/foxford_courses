@@ -1,32 +1,39 @@
 const fs = require("fs");
 const path = require("path");
-const { Chromeless } = require("chromeless");
+const puppeteer = require("puppeteer");
 const request = require("request");
 const progress = require("request-progress");
 const chalk = require("chalk");
 const slug = require("slug");
 
 var utils = require("./utils");
+var ffmpegBin = require("ffmpeg-binaries");
 
 const download = async ({ linkList }) => {
-    let browser = new Chromeless({
-        scrollBeforeClick: true,
-        implicitWait: true,
-        launchChrome: true,
-        waitTimeout: 30000 // 30 seconds
+    let browser = await puppeteer.launch({
+        headless: true,
+        args: [
+            '--disable-sync',
+            '--disable-translate',
+            '--disable-extensions',
+            '--disable-default-apps',
+            '--proxy-server="direct://"',
+            '--proxy-bypass-list=*',
+            '--mute-audio',
+            '--hide-scrollbars'
+        ]
     });
 
+    let page = await browser.newPage();
     let { login, password } = await utils.queryCredentials();
 
     try {
-        await browser
-            .goto('https://foxford.ru/user/login?redirect=/dashboard')
-            .wait("div[class^='AuthLayout__container']")
-            .type(login, 'input[name="email"]')
-            .type(password, 'input[name="password"]')
-            .click("button[class^='Button__root']")
-            .wait("div[class^='PupilDashboard']")
-            .evaluate(() => console.log("Ready!"));
+        await page.goto('https://foxford.ru/user/login?redirect=/dashboard');
+        await page.waitForSelector("div[class^='AuthLayout__container']");
+        await page.type('input[name="email"]', login);
+        await page.type('input[name="password"]', password);
+        await page.click("button[class^='Button__root']");
+        await page.waitForSelector("div[class^='PupilDashboard']");
 
     } catch (err) {
         console.log(chalk.red('Обнаружена проблема при входе.'));
@@ -40,21 +47,19 @@ const download = async ({ linkList }) => {
         console.log(chalk.blue(`Готовлюсь к добавлению в очередь видео по ссылке #${counter + 1}...`));
 
         try {
-            await browser
-                .goto(link)
-                .wait('.full_screen')
-                .evaluate(() => console.log("Navigated!"));
+            await page.goto(link);
+            await page.waitForSelector('.full_screen > iframe');
 
-            let erlyFronts = await browser.evaluate(() => document.querySelector('.full_screen').firstChild.src);
+            let erlyFronts = await page.evaluate(() => document.querySelector('.full_screen > iframe').src);
 
-            await browser
-                .goto(erlyFronts)
-                .wait('video > source')
-                .evaluate(() => console.log("Navigated!"));
+            await page.goto(erlyFronts);
+            await page.waitForSelector('video > source');
 
-            var lessonName = await browser.evaluate(() => document.querySelector('[class^="Header__name__"]').innerText);
-            let m3u8Link = await browser.evaluate(() => document.querySelector("video > source").src);
-            var mp4Link = m3u8Link
+            var globalLessonName = await page.evaluate(() => document.querySelector('[class^="Header__name__"]').innerText);
+
+            var globalM3u8Link = await page.evaluate(() => document.querySelector('video > source').src);
+
+            var globalMp4Link = globalM3u8Link
                 |> (m3u8Link => new URL(m3u8Link))
                 |> (urlObj => {
                         urlObj.pathname = urlObj
@@ -65,7 +70,7 @@ const download = async ({ linkList }) => {
                     })
                 |> (modUrlObj => modUrlObj.href);
 
-            utils.logger.logDetails({ counter: counter + 1, baseLink: link, mp4Link: mp4Link, m3u8Link: m3u8Link });
+            utils.logger.logDetails({ counter: counter + 1, baseLink: link, mp4Link: globalMp4Link, m3u8Link: globalM3u8Link });
 
         } catch (err) {
             console.log(chalk.red('Обнаружена проблема при получении видео.'));
@@ -74,31 +79,73 @@ const download = async ({ linkList }) => {
         }
 
         processList.push(
-            new Promise((resolve, reject) => {
-                let filename = `${slug(lessonName)}.mp4`;
+            new Promise(async (finalResolve, finalReject) => {
+                let lessonName = globalLessonName.valueOf();
+                let m3u8Link = globalM3u8Link.valueOf();
+                let mp4Link = globalMp4Link.valueOf();
 
-                progress(request({
-                    uri: mp4Link,
-                    method: 'GET',
-                    headers: {
-                        'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.7 Safari/537.36'
-                    },
-                    jar: true,
-                    forever: true
-                }))
-                .on('error', err => reject(err))
-                .on('end', () => resolve(filename))
-                .pipe(fs.createWriteStream(path.join(process.cwd(), filename)));
+                let mp4DlSucceeded = await new Promise(async (mp4Resolve, mp4Reject) => {
+                    let mp4Destination = path.join(process.cwd(), `${slug(lessonName)}.mp4`);
 
-            }).then(filename => {
-                console.log(chalk.green(`${filename} ...✓`));
+                    let videoContentLength = await new Promise((resolve, reject) => {
+                        request.head(mp4Link, (err, response, body) => {
+                            if (err || response.statusCode !== 200) {
+                                reject(`${err}. Код: ${response.statusCode}`);
+                            }
+
+                            resolve(response.headers['content-length']);
+                        });
+                    });
+
+                    await new Promise((resolve, reject) => {
+                        progress(request(mp4Link))
+                            .on('error', err => reject(err))
+                            .on('end', () => resolve(true))
+                            .pipe(fs.createWriteStream(mp4Destination));
+                    });
+
+                    let mp4Stat = fs.statSync(mp4Destination);
+                    let mp4Size = mp4Stat.size;
+
+                    if (Number(mp4Size) === Number(videoContentLength)) {
+                        console.log(chalk.green(`${path.basename(mp4Destination)} ...✓\n`));
+                        mp4Resolve(true);
+
+                    } else {
+                        console.log(chalk.yellow(`Видео ${path.basename(mp4Destination)} повреждено. Это не я, честно! Но сейчас попробую что-нибудь с этим сделать...`));
+                        fs.unlink(mp4Destination, err => {});
+                        mp4Resolve(false);
+                    }
+                });
+
+                if (!mp4DlSucceeded) {
+                    let mp4Destination = path.join(process.cwd(), `${slug(lessonName)}.mp4`);
+
+                    console.log(chalk.green(`Скачивание видео ${path.basename(mp4Destination)} запущено повторно. Это займет какое-то время.\n`));
+
+                    let { stderr } = await utils.executeCommand(`${ffmpegBin} -hide_banner -loglevel error -i "${m3u8Link}" -c copy -bsf:a aac_adtstoasc ${mp4Destination}`);
+
+                    if (stderr) {
+                        fs.unlink(mp4Destination, err => {});
+
+                        console.log(chalk.yellow(`Не удалось скачать видео ${path.basename(mp4Destination)}. \nТрейсбек: ${stderr}\n`));
+                        finalResolve(false);
+
+                    } else {
+                        console.log(chalk.green(`${path.basename(mp4Destination)} ...✓\n`));
+                        finalResolve(true);
+                    }
+
+                } else {
+                    finalResolve(true);
+                }
             })
         );
 
-        console.log(chalk.green(`Видео #${counter + 1} добавлено в очередь! Будет сохранено в ${slug(lessonName)}.mp4\n`));
+        console.log(chalk.green(`Видео #${counter + 1} добавлено в очередь! Будет сохранено в ${slug(globalLessonName)}.mp4\n`));
     }
 
-    await browser.end();
+    browser.close();
 
     let timeStart = new Date();
     let hoursStart = ('0' + timeStart.getHours()).slice(-2);
@@ -113,7 +160,7 @@ const download = async ({ linkList }) => {
     let minutesEnd = ('0' + timeEnd.getMinutes()).slice(-2);
     let secondsEnd = ('0' + timeEnd.getSeconds()).slice(-2);
 
-    console.log(chalk.green(`\nЗагрузка завершена в ${hoursEnd}:${minutesEnd}:${secondsEnd}.\n`));
+    console.log(chalk.green(`\nЗагрузка завершена в ${hoursEnd}:${minutesEnd}:${secondsEnd}. Завершаю работу...\n`));
 };
 
 (() => {

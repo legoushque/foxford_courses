@@ -312,7 +312,7 @@ https://mega.nz/#F!VdMS1QTL!UzidAXtwhfSPXDC8YoUDAQ
 
 ----------------------------------------------
 
-[**Способы извлечения данных**](https://github.com/limitedeternity/foxford_courses/tree/master/foxford_downloader/video_download)
+[**Способы извлечения данных**](https://github.com/limitedeternity/foxford_courses/tree/master/foxford_downloader/video)
 
 ----------------------------
 

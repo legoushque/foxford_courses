@@ -1,6 +1,5 @@
 const exec = require("child_process").exec;
 const fs = require("fs");
-const crypto = require("crypto");
 const sqlite3 = require("sqlite3").verbose();
 const path = require("path");
 const { getYesNo, question } = require("cli-interact");
@@ -46,12 +45,13 @@ module.exports = {
         });
 
       } else {
-        console.log(chalk.yellow('\nВойдите в свой аккаунт\n'));
+        console.log(chalk.yellow('Войдите в свой аккаунт\n'));
 
         let login = question(chalk.green('Логин: '));
         let password = question(chalk.green('Пароль: '));
 
-        let isReady = getYesNo(chalk.yellow(`Всё верно? ${login} : ${password}.`));
+        let isReady = getYesNo(chalk.yellow(`\nВсё верно? ${login} : ${password}`));
+        console.log("\n");
 
         if (isReady) {
           let db = new sqlite3.Database(path.join(process.cwd(), 'credentials.db'));

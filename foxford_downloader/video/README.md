@@ -7,7 +7,7 @@
 
 *Сложность: средняя (для пользователей десктопов)*
 
-1. Установи [Node.js (Latest)](https://nodejs.org) и [Chrome (Canary)](https://www.google.com/chrome/canary/).
+1. Установи [Node.js (Latest)](https://nodejs.org).
 
 2. [Склонируй репозиторий](https://github.com/limitedeternity/foxford_courses/archive/master.zip), распакуй архив в любое удобное место, перейди в проводнике сюда (в эту папку), после чего открой здесь терминал и выполни следующие команды:
 
@@ -103,7 +103,7 @@
 
 Перенесен на Node.js. Прекращена поддержка автоматического создания скриншотов.
 
-*Current version*: v5-rstable2
+*Current version*: v5.1-rstable0
 
 --------
 

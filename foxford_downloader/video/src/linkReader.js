@@ -27,7 +27,7 @@ module.exports = class {
         process.exit(1);
 
     } else {
-        console.log(chalk.green(`Ссылок загружено: ${linkList.length}`));
+        console.log(chalk.green(`Ссылок загружено: ${linkList.length}\n`));
         return linkList;
     }
   }
