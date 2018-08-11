@@ -112,7 +112,7 @@ const download = async ({ linkList }) => {
                         mp4Resolve(true);
 
                     } else {
-                        console.log(chalk.yellow(`Видео ${path.basename(mp4Destination)} повреждено. Это не я, честно! Но сейчас попробую что-нибудь с этим сделать...`));
+                        console.log(chalk.yellow(`Видео ${path.basename(mp4Destination)} повреждено. Это не я, честно! Но сейчас попробую что-нибудь с этим сделать...\n`));
                         fs.unlink(mp4Destination, err => {});
                         mp4Resolve(false);
                     }
