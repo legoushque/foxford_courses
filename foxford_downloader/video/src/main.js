@@ -121,7 +121,7 @@ const download = async ({ linkList }) => {
                 if (!mp4DlSucceeded) {
                     let mp4Destination = path.join(process.cwd(), `${slug(lessonName)}.mp4`);
 
-                    console.log(chalk.green(`Скачивание видео ${path.basename(mp4Destination)} запущено повторно. Это займет какое-то время.\n`));
+                    console.log(chalk.green(`Скачивание видео ${path.basename(mp4Destination)} запущено повторно. Это займет дольше, чем рассчитывалось.\n`));
 
                     let { stderr } = await utils.executeCommand(`${ffmpegBin} -hide_banner -loglevel error -i "${m3u8Link}" -c copy -bsf:a aac_adtstoasc ${mp4Destination}`);
 
@@ -165,6 +165,11 @@ const download = async ({ linkList }) => {
 
 (() => {
     console.log(chalk.magenta('Coded by @limitedeternity.\n'));
+
+    if (!/^v\d{2,}\.\d+\.\d+$/.test(process.version)) {
+        console.log(chalk.red(`Похоже, версия Node.js не соответствует требуемой.\n\nТекущая версия: ${process.version}\nТребуемая: v10+`));
+        process.exit(1);
+    }
 
     require("events").EventEmitter.prototype._maxListeners = Infinity;
 
