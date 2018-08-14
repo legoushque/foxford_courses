@@ -30,9 +30,22 @@ const download = async ({ linkList }) => {
     try {
         await page.goto('https://foxford.ru/user/login?redirect=/dashboard');
         await page.waitForSelector("div[class^='AuthLayout__container']");
-        await page.type('input[name="email"]', login);
-        await page.type('input[name="password"]', password);
-        await page.click("button[class^='Button__root']");
+        await page.evaluate(`
+            fetch("https://foxford.ru/user/login", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json, text/plain, */*',
+                    ...ReactOnRails.authenticityHeaders()
+                },
+                body: JSON.stringify({
+                    user: {
+                        email: "${login}",
+                        password: "${password}"
+                    }
+                })
+            }).then(() => location.reload());
+        `);
         await page.waitForSelector("div[class^='PupilDashboard']");
 
     } catch (err) {
