@@ -46,7 +46,11 @@ const download = async ({ linkList }) => {
                 })
             }).then(() => location.reload());
         `);
-        await page.waitForSelector("div[class^='PupilDashboard']");
+
+        await utils.anyPromise([
+            page.waitForSelector("div[class^='PupilDashboard']"),
+            page.waitForSelector("div[class^='TeacherDashboard']")
+        ]);
 
     } catch (err) {
         console.log(chalk.red('Обнаружена проблема при входе.'));

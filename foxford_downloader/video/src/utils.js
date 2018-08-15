@@ -30,6 +30,24 @@ module.exports = {
     });
   },
 
+  anyPromise(promises) {
+      let errors = [];
+
+      return new Promise(async (resolve, reject) => {
+          await Promise.race(promises.map(p => {
+              return p.catch(err => {
+                  errors.push(err);
+
+                  if (errors.length >= promises.length) {
+                      reject(errors);
+                  }
+              });
+          }));
+
+          resolve(true);
+      });
+  },
+
   queryCredentials() {
     return new Promise(resolve => {
       if (fs.existsSync(path.join(process.cwd(), 'credentials.db'))) {
