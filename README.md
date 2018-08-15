@@ -162,11 +162,16 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
 
 <details>
 <summary>⚛️ <b>[Технические]</b></summary>
+    
+* [Подготовка к ОГЭ. Математика. 9 класс](https://cloud.mail.ru/public/95XE/g3e1XZCrE)
 
 * Подготовка к ЕГЭ. Математика. C-часть:
 
     - [Презентации](https://mega.nz/#F!HXgwTLzQ!5VgTKJvGKh_3VxfNctx9HQ)
     - [Видео](https://mega.nz/#F!Ln40BSpa!ciyrGIRZhD6vsn-x0EMUUA)
+    - [Д/З](https://yadi.sk/d/ll2e8ATk3a3xPB)
+    
+* Экспресс-подготовка к ЕГЭ. Математика. В-часть.
 
 * Экспресс-подготовка к ЕГЭ. Математика. С-часть.
 
@@ -174,6 +179,7 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
 
     - [Презентации](https://mega.nz/#F!bOp2FbrJ!eR7EbmgcBX82xEVJZpY4QA)
     - [Видео](https://mega.nz/#F!vrhllCKB!Mo5ebF8JJGsULfJgu3f9Lg)
+    - [Д/З](https://mega.nz/#F!nWJAHQDI!mjP9Z_C7LuSTgkZW0Nm-0w)
 
 * Математика. Подготовка к олимпиаде Физтех.
 
@@ -182,7 +188,11 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
     - [Теория](https://cloud.mail.ru/public/26aB/YRvzhyJe1)
     - [Видео](https://mega.nz/#F!ezxWSCaL!3XPe3dRspzkoL74uVz_tLg)
 
-* Физика. Подготовка к олимпиаде Физтех.
+* [Физика. Подготовка к олимпиаде Физтех](https://mega.nz/#F!XWBAHQLZ!bFdDHnqx1uUq0h7gLxdfxw)
+
+* Физика. Подготовка к олимпиадам. 10 класс:
+    - [Видео](https://mega.nz/#F!nvhniQxD!5p07SQGsfjOGsZ0T-A2u1w)
+    - [Д/З](https://yadi.sk/d/h7kaU9Mj3a5fGa)
 
 * Информатика. Подготовка к ЕГЭ.
 
@@ -218,10 +228,16 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
 <br>
 <details>
 <summary>✊ <b>[Гуманитарные]</b></summary>
+    
+* [Подготовка к ОГЭ. Русский язык. 9 класс](https://cloud.mail.ru/public/Lrgj/hEMedDyVS)
+
+* [Курс подготовки к написанию сочинений и изложений на ОГЭ и ГВЭ 9 класс](https://cloud.mail.ru/public/GfZf/EKm5vTgbJ)
 
 * Английский язык. Подготовка к ЕГЭ.
 
 * [Русский язык. Экспресс-курс по подготовке к сочинению.](https://yadi.sk/d/P1Dv8v2V3WurE3)
+
+* Русский язык. Подготовка к декабрьскому сочинению.
 
 * [Русский язык. 1 часть.](https://cloud.mail.ru/public/151p/52H17pYrV)
 
@@ -244,6 +260,13 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
 </details>
 <br>
 <details>
+<summary>🔬 <b>[Естественно-научные]</b></summary>
+    
+* [Химия. Экспресс-подготовка к ЕГЭ](https://yadi.sk/d/kiXwNckX3ZBKeC)
+    
+</details>
+<br>
+<details>
 <summary>💡 <b>[Другое]</b></summary>
 
 * [Финансовая грамотность и современные платежные технологии](https://yadi.sk/d/gcrg9MWI3Wveax)
@@ -254,7 +277,7 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
 
 * [Основы информатики и программирования](https://cloud.mail.ru/public/DQUN/ZV3K6kVQ7)
 
-* [Эффективное мышление на основе ТРИЗ](https://cloud.mail.ru/public/AS7U/SsBGoVsJx)
+* [Эффективное мышление на основе ТРИЗ. 7-8 класс](https://cloud.mail.ru/public/AS7U/SsBGoVsJx)
 
 </details>
 <br>
