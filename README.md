@@ -261,8 +261,10 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
 <br>
 <details>
 <summary>🔬 <b>[Естественно-научные]</b></summary>
-    
+
 * [Химия. Экспресс-подготовка к ЕГЭ](https://yadi.sk/d/kiXwNckX3ZBKeC)
+
+* -
     
 </details>
 <br>
