@@ -188,11 +188,11 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
     - [Теория](https://cloud.mail.ru/public/26aB/YRvzhyJe1)
     - [Видео](https://mega.nz/#F!ezxWSCaL!3XPe3dRspzkoL74uVz_tLg)
 
-* [Физика. Подготовка к олимпиаде Физтех](https://mega.nz/#F!XWBAHQLZ!bFdDHnqx1uUq0h7gLxdfxw)
-
-* Физика. Подготовка к олимпиадам. 10 класс:
-    - [Видео](https://mega.nz/#F!nvhniQxD!5p07SQGsfjOGsZ0T-A2u1w)
+* Физика. Подготовка к олимпиаде Физтех:
+    - [Видео](https://mega.nz/#F!XWBAHQLZ!bFdDHnqx1uUq0h7gLxdfxw)
     - [Д/З](https://yadi.sk/d/h7kaU9Mj3a5fGa)
+
+* [Физика. Подготовка к олимпиадам. 10 класс](https://mega.nz/#F!nvhniQxD!5p07SQGsfjOGsZ0T-A2u1w).
 
 * Информатика. Подготовка к ЕГЭ.
 
