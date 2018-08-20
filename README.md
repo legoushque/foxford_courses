@@ -192,7 +192,9 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
     - [Видео](https://mega.nz/#F!XWBAHQLZ!bFdDHnqx1uUq0h7gLxdfxw)
     - [Д/З](https://yadi.sk/d/h7kaU9Mj3a5fGa)
 
-* [Физика. Подготовка к олимпиадам. 10 класс](https://mega.nz/#F!nvhniQxD!5p07SQGsfjOGsZ0T-A2u1w).
+* Физика. Подготовка к олимпиадам. 10 класс:
+    - [Видео](https://mega.nz/#F!nvhniQxD!5p07SQGsfjOGsZ0T-A2u1w)
+    - [Д/З](https://yadi.sk/d/BzMMJBXl3aNgiv)
 
 * Информатика. Подготовка к ЕГЭ.
 
@@ -250,9 +252,13 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
 
 * [История. Подготовка к ЕГЭ.](https://mega.nz/#F!zzxk1C7C!EI3o8bquUt8cmYUOjxHHZQ)
 
+* [История. Подготовка к ОГЭ.](https://cloud.mail.ru/public/Esxr/wePkYv1XB)
+
 * [Подготовка к олимпиадам по праву](https://yadi.sk/d/j5coXPRF3X2dwV)
 
 * [Обществознание. Подготовка к ЕГЭ.](https://drive.google.com/drive/u/4/folders/1LQL1AYK5R0ZmqCUagDFPq8UWz2knyh1E)
+
+* [Обществознание. Подготовка к ОГЭ.](https://cloud.mail.ru/public/EB4p/2sQ3aiwiw)
 
 * Обществознание. Подготовка к олимпиадам.
 
