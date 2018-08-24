@@ -193,10 +193,12 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
     - [Видео](https://mega.nz/#F!ezxWSCaL!3XPe3dRspzkoL74uVz_tLg)
 
 * Физика. Подготовка к олимпиаде Физтех:
+
     - [Видео](https://mega.nz/#F!XWBAHQLZ!bFdDHnqx1uUq0h7gLxdfxw)
     - [Д/З](https://yadi.sk/d/h7kaU9Mj3a5fGa)
 
 * Физика. Подготовка к олимпиадам. 10 класс:
+
     - [Видео](https://mega.nz/#F!nvhniQxD!5p07SQGsfjOGsZ0T-A2u1w)
     - [Д/З](https://yadi.sk/d/BzMMJBXl3aNgiv)
 
@@ -214,7 +216,10 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
 
 * [Интенсивный курс по математике "Задачи по теории чисел на ЕГЭ"](https://yadi.sk/d/LfusFOrL3WbkxS)
 
-* [Мини-курс по физике "Магнетизм и электромагнитная индукция"](https://yadi.sk/d/qTfLE88L3WYDwV)
+* Мини-курс по физике "Магнетизм и электромагнитная индукция":
+
+    - [Видео](https://yadi.sk/d/qTfLE88L3WYDwV)
+    - [Д/З](https://mega.nz/#F!Di5HWB5C!6qxfCkgSms6ulB-EzThz7w)
 
 * [Мини-курс по физике "Метод потенциалов"](https://cloud.mail.ru/public/9ksB/xhg2QYGsx)
 
