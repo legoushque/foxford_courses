@@ -15,22 +15,22 @@
 <details>
 <summary>⚛️ <b>[Технические]</b></summary>
 
-* [Математика. Подготовка к ЕГЭ. Часть С](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01MjU3MjM1)
+* [Математика. Подготовка к ЕГЭ. Часть С](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01MjU3MjM1)
 
-* [Физика. Подготовка к ЕГЭ. Часть С](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01MjU3MjQ5)
+* [Физика. Подготовка к ЕГЭ. Часть С](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01MjU3MjQ5)
 
-* [Информатика. Экспресс-подготовка к ЕГЭ](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01MjU3MjIw)
+* [Информатика. Экспресс-подготовка к ЕГЭ](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01MjU3MjIw)
 
-* [Алгебра. 10 класс](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDI3MjU0)
+* [Алгебра. 10 класс](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDI3MjU0)
 
-* [Геометрия. 10 класс](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDI5Mzcw)
+* [Геометрия. 10 класс](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDI5Mzcw)
 
 </details>
 <br>
 <details>
 <summary>✊ <b>[Гуманитарные]</b></summary>
 
-* [Русский Язык. Подготовка к ЕГЭ. Сочинение](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01MjU3MjYz)
+* [Русский Язык. Подготовка к ЕГЭ. Сочинение](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01MjU3MjYz)
 
 * [Экспресс-курс. Учи английский легко.](https://cloud.mail.ru/public/6og2/YZeFbTwYT/)
 
@@ -51,74 +51,74 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
 <details>
 <summary>⚛️ <b>[Технические]</b></summary>
 
-* [Подготовка к ОГЭ. Физика](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ2NjMz)
+* [Подготовка к ОГЭ. Физика](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ2NjMz)
 
-* [Подготовка к олимпиадам. Математика. 9 класс](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ2NjMy)
+* [Подготовка к олимпиадам. Математика. 9 класс](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ2NjMy)
 
-* [Экспресс-подготовка к ОГЭ. Физика](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ2NjIx)
+* [Экспресс-подготовка к ОГЭ. Физика](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ2NjIx)
 
-* [Подготовка к ОГЭ. Математика](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ2NjM1)
+* [Подготовка к ОГЭ. Математика](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ2NjM1)
 
-* [Экспресс-подготовка к ОГЭ. Математика](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ2NjIz)
+* [Экспресс-подготовка к ОГЭ. Математика](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ2NjIz)
 
-* [Углубленный курс. Алгебра](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ2NjI3)
+* [Углубленный курс. Алгебра](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ2NjI3)
 
-* [Углубленный курс. Геометрия](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ2NjI2)
+* [Углубленный курс. Геометрия](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ2NjI2)
 
-* [Подготовка к олимпиадам "Физтех" по математике](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDE4MTk2)
+* [Подготовка к олимпиадам "Физтех" по математике](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDE4MTk2)
 
-* [Подготовка к олимпиадам "Физтех" по физике](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQxMjQw)
+* [Подготовка к олимпиадам "Физтех" по физике](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQxMjQw)
 
-* [Подготовка к олимпиадам по математике](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDE4MTA4)
+* [Подготовка к олимпиадам по математике](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDE4MTA4)
 
-* [Подготовка к олимпиадам по физике](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQyNjg3)
+* [Подготовка к олимпиадам по физике](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQyNjg3)
 
-* [Программирование (9-11 классы). Подготовка к олимпиадам, базовый уровень](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0NDM3)
+* [Программирование (9-11 классы). Подготовка к олимпиадам, базовый уровень](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0NDM3)
 
-* [Программирование (9-11 классы). Подготовка к олимпиадам, продвинутый уровень](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDE3MzE0)
+* [Программирование (9-11 классы). Подготовка к олимпиадам, продвинутый уровень](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDE3MzE0)
 
-* [Математика. Подготовка к ЕГЭ / Часть С](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDE3ODg2)
+* [Математика. Подготовка к ЕГЭ / Часть С](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDE3ODg2)
 
-* [Математика. Экспресс-подготовка к ЕГЭ / Часть С](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0NTEw)
+* [Математика. Экспресс-подготовка к ЕГЭ / Часть С](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0NTEw)
 
-* [Математика. Экспресс-подготовка к ЕГЭ / Часть B](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0OTYw)
+* [Математика. Экспресс-подготовка к ЕГЭ / Часть B](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0OTYw)
 
-* [Физика. Экспресс-подготовка к ЕГЭ / Часть С](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0OTUz)
+* [Физика. Экспресс-подготовка к ЕГЭ / Часть С](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0OTUz)
 
-* [Физика. Экспресс-подготовка к ЕГЭ / Часть B](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0OTU0)
+* [Физика. Экспресс-подготовка к ЕГЭ / Часть B](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0OTU0)
 
-* [Информатика. Подготовка к ЕГЭ](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDE3ODA3)
+* [Информатика. Подготовка к ЕГЭ](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDE3ODA3)
 
-* [Изучение языков С и С++ / Язык С++](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDE3ODI4)
+* [Изучение языков С и С++ / Язык С++](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDE3ODI4)
 
-* [Web-программирование](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDE4NDM3)
+* [Web-программирование](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDE4NDM3)
 
-* [Программирование на языке Python](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0NDIz)
+* [Программирование на языке Python](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0NDIz)
 
 </details>
 <br>
 <details>
 <summary>✊ <b>[Гуманитарные]</b></summary>
 
-* [Подготовка к ОГЭ. Обществознание](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ2NjM0)
+* [Подготовка к ОГЭ. Обществознание](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ2NjM0)
 
-* [Подготовка к олимпиадам. Обществознание](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ2NjMw)
+* [Подготовка к олимпиадам. Обществознание](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ2NjMw)
 
-* [Русский язык. Подготовка к ЕГЭ. Часть 1](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0NDA5)
+* [Русский язык. Подготовка к ЕГЭ. Часть 1](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0NDA5)
 
-* [Русский язык. Экспресс-подготовка к ЕГЭ. Часть 1](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0OTU3)
+* [Русский язык. Экспресс-подготовка к ЕГЭ. Часть 1](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0OTU3)
 
-* [Русский язык. Сочинение. Экспресс-подготовка к ЕГЭ](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0NDQ5)
+* [Русский язык. Сочинение. Экспресс-подготовка к ЕГЭ](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0NDQ5)
 
-* [Английский язык. Подготовка к ЕГЭ](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0NDE5)
+* [Английский язык. Подготовка к ЕГЭ](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0NDE5)
 
-* [Английский язык. Экспресс-подготовка к ЕГЭ](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0NDM0)
+* [Английский язык. Экспресс-подготовка к ЕГЭ](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0NDM0)
 
-* [Стань сильнее. Pre-Intermediate (A2-B1)](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0NDEy)
+* [Стань сильнее. Pre-Intermediate (A2-B1)](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0NDEy)
 
-* [Обществознание. Экспресс-подготовка к ЕГЭ](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0MzA3)
+* [Обществознание. Экспресс-подготовка к ЕГЭ](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0MzA3)
 
-* [Обществознание. Подготовка к ЕГЭ](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0MzAz)
+* [Обществознание. Подготовка к ЕГЭ](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0MzAz)
 
 * [Обществознание. Подготовка к олимпиадам](https://mega.nz/#F!Vv4AmCpS!ClUpGarpD8yXyrx1MEoeLQ)
 
@@ -129,24 +129,24 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
 <details>
 <summary>🔬 <b>[Естественно-научные]</b></summary>
 
-* [Биология. Подготовка к ЕГЭ](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDM4ODA1)
+* [Биология. Подготовка к ЕГЭ](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDM4ODA1)
 
-* [Биология. Экспресс-подготовка к ЕГЭ](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0NDE0)
+* [Биология. Экспресс-подготовка к ЕГЭ](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0NDE0)
 
-* [Биология. Подготовка к олимпиадам](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ1MDA1)
+* [Биология. Подготовка к олимпиадам](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ1MDA1)
 
-* [Химия. Подготовка к ЕГЭ](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQxMTE4)
+* [Химия. Подготовка к ЕГЭ](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQxMTE4)
 
-* [Химия. Подоготовка к олимпиадам](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0NDI2)
+* [Химия. Подоготовка к олимпиадам](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0NDI2)
 
-* [Химия. Экспресс-подготовка к ЕГЭ](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0NTAw)
+* [Химия. Экспресс-подготовка к ЕГЭ](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ0NTAw)
 
 </details>
 <br>
 <details>
 <summary>💡 <b>[Другое]</b></summary>
 
-* [Словесность. Работа с информацией](https://unblocker-webapp.herokuapp.com/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ2ODMy)
+* [Словесность. Работа с информацией](https://unblocker.now.sh/?url=aHR0cHM6Ly9ydXRyYWNrZXIub3JnL2ZvcnVtL3ZpZXd0b3BpYy5waHA/dD01NDQ2ODMy)
 
 * -
 
@@ -162,7 +162,7 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
 
 <details>
 <summary>⚛️ <b>[Технические]</b></summary>
-    
+
 * [Подготовка к ОГЭ. Математика. 9 класс](https://cloud.mail.ru/public/95XE/g3e1XZCrE)
 
 * Подготовка к ЕГЭ. Математика. C-часть:
@@ -170,7 +170,7 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
     - [Презентации](https://mega.nz/#F!HXgwTLzQ!5VgTKJvGKh_3VxfNctx9HQ)
     - [Видео](https://mega.nz/#F!Ln40BSpa!ciyrGIRZhD6vsn-x0EMUUA)
     - [Д/З](https://yadi.sk/d/ll2e8ATk3a3xPB)
-    
+
 * Экспресс-подготовка к ЕГЭ. Математика. В-часть.
 
 * Экспресс-подготовка к ЕГЭ. Математика. С-часть.
@@ -180,7 +180,7 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
     - [Презентации](https://mega.nz/#F!bOp2FbrJ!eR7EbmgcBX82xEVJZpY4QA)
     - [Видео](https://mega.nz/#F!vrhllCKB!Mo5ebF8JJGsULfJgu3f9Lg)
     - [Д/З](https://mega.nz/#F!nWJAHQDI!mjP9Z_C7LuSTgkZW0Nm-0w)
- 
+
 * [Физика. Экспресс-подготовка к ЕГЭ. С-часть](https://yadi.sk/d/JCp76aCp3aVxHd)
 
 * [Физика. Экспресс-подготовка к ЕГЭ. В-часть](https://yadi.sk/d/jlvSYm5t3aVhqQ)
@@ -239,7 +239,7 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
 <br>
 <details>
 <summary>✊ <b>[Гуманитарные]</b></summary>
-    
+
 * [Подготовка к ОГЭ. Русский язык. 9 класс](https://cloud.mail.ru/public/Lrgj/hEMedDyVS)
 
 * [Курс подготовки к написанию сочинений и изложений на ОГЭ и ГВЭ 9 класс](https://cloud.mail.ru/public/GfZf/EKm5vTgbJ)
@@ -282,7 +282,7 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
 * [Химия. Экспресс-подготовка к ЕГЭ](https://yadi.sk/d/kiXwNckX3ZBKeC)
 
 * [Биология. Подготовка к ЕГЭ](https://yadi.sk/d/3rtloxF43aVTnp)
-    
+
 </details>
 <br>
 <details>
