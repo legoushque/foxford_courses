@@ -2,9 +2,9 @@
   "name": "foxford-downloader",
   "version": "1.0.0",
   "description": "Downloader utility for foxford courses",
-  "main": "index.js",
+  "bin": "out/main.js",
   "scripts": {
-    "start": "babel src/ -d out && node out/main.js"
+    "build": "export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true && npm ci && babel src/ -d out && pkg . --out-path build/ && rm -rf out/ && rm -rf node_modules/"
   },
   "author": "Marise Hayashi <@limitedeternity> (https://limitedeternity.github.io/)",
   "license": "MIT",
@@ -13,8 +13,8 @@
     "@babel/core": "^7.0.0-rc.1",
     "@babel/plugin-proposal-pipeline-operator": "^7.0.0-rc.1",
     "chalk": "^2.4.1",
-    "cli-interact": "^0.1.9",
-    "ffmpeg-binaries": "^4.0.0",
+    "pkg": "^4.3.4",
+    "prompt-sync": "^4.1.6",
     "puppeteer": "^1.7.0",
     "request": "^2.88.0",
     "request-progress": "^3.0.0",

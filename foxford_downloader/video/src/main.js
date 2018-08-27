@@ -7,10 +7,26 @@ const chalk = require("chalk");
 const slug = require("slug");
 
 var utils = require("./utils");
-var ffmpegBin = require("ffmpeg-binaries");
+
+var ffmpegBin = process.platform === 'win32'
+                    ?
+                    path.join(path.dirname(process.argv[0]), 'ffmpeg.exe')
+                    :
+                    path.join(path.dirname(process.argv[0]), 'ffmpeg');
+
+var chromiumBin = process.platform === 'win32'
+                    ?
+                    path.join(path.dirname(process.argv[0]), 'chromium', 'chrome.exe')
+                    :
+                  process.platform === 'darwin'
+                    ?
+                    path.join(path.dirname(process.argv[0]), 'chromium', 'Chromium.app', 'Contents', 'MacOS', 'Chromium')
+                    :
+                    path.join(path.dirname(process.argv[0]), 'chromium', 'chrome');
 
 const download = async ({ linkList }) => {
     let browser = await puppeteer.launch({
+        executablePath: chromiumBin,
         headless: true,
         args: [
             '--disable-sync',
@@ -67,14 +83,14 @@ const download = async ({ linkList }) => {
             await page.goto(link);
             await page.waitForSelector('.full_screen > iframe');
 
-            let erlyFronts = await page.evaluate(() => document.querySelector('.full_screen > iframe').src);
+            let erlyFronts = await page.evaluate(`document.querySelector('.full_screen > iframe').src;`);
 
             await page.goto(erlyFronts);
             await page.waitForSelector('video > source');
 
-            var globalLessonName = await page.evaluate(() => document.querySelector('[class^="Header__name__"]').innerText);
+            var globalLessonName = await page.evaluate(`document.querySelector('[class^="Header__name__"]').innerText;`);
 
-            var globalM3u8Link = await page.evaluate(() => document.querySelector('video > source').src);
+            var globalM3u8Link = await page.evaluate(`document.querySelector('video > source').src;`);
 
             var globalMp4Link = globalM3u8Link
                 |> (m3u8Link => new URL(m3u8Link))
@@ -102,7 +118,7 @@ const download = async ({ linkList }) => {
                 let mp4Link = globalMp4Link.valueOf();
 
                 let mp4DlSucceeded = await new Promise(async (mp4Resolve, mp4Reject) => {
-                    let mp4Destination = path.join(process.cwd(), `${slug(lessonName)}.mp4`);
+                    let mp4Destination = path.join(path.dirname(process.argv[0]), `${slug(lessonName)}.mp4`);
 
                     let videoContentLength = await new Promise((resolve, reject) => {
                         request.head(mp4Link, (err, response, body) => {
@@ -136,7 +152,7 @@ const download = async ({ linkList }) => {
                 });
 
                 if (!mp4DlSucceeded) {
-                    let mp4Destination = path.join(process.cwd(), `${slug(lessonName)}.mp4`);
+                    let mp4Destination = path.join(path.dirname(process.argv[0]), `${slug(lessonName)}.mp4`);
 
                     console.log(chalk.green(`Скачивание видео ${path.basename(mp4Destination)} запущено повторно. Это займет дольше, чем рассчитывалось.\n`));
 
@@ -182,11 +198,6 @@ const download = async ({ linkList }) => {
 
 (() => {
     console.log(chalk.magenta('Coded by @limitedeternity.\n'));
-
-    if (!/^v\d{2,}\.\d+\.\d+$/.test(process.version)) {
-        console.log(chalk.red(`Похоже, версия Node.js не соответствует требуемой.\n\nТекущая версия: ${process.version}\nТребуемая: v10+`));
-        process.exit(1);
-    }
 
     require("events").EventEmitter.prototype._maxListeners = Infinity;
 

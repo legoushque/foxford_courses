@@ -165,6 +165,13 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
 
 * [Подготовка к ОГЭ. Математика. 9 класс](https://cloud.mail.ru/public/95XE/g3e1XZCrE)
 
+* [Геометрия. Углубленный уровень. 10 класс](https://yadi.sk/d/-Rv0BQU-3aYjgM)
+
+* Подготовка к ЕГЭ. Математика. 10 класс:
+
+    - [Видео](https://mega.nz/#F!vagE3aCa!i20C7ttAZavCPhe4SAfqeg)
+    - [Д/З](https://yadi.sk/d/Ij3LuPWs3aUjTn)
+
 * Подготовка к ЕГЭ. Математика. C-часть:
 
     - [Презентации](https://mega.nz/#F!HXgwTLzQ!5VgTKJvGKh_3VxfNctx9HQ)
@@ -221,7 +228,10 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
     - [Видео](https://yadi.sk/d/qTfLE88L3WYDwV)
     - [Д/З](https://mega.nz/#F!Di5HWB5C!6qxfCkgSms6ulB-EzThz7w)
 
-* [Мини-курс по физике "Метод потенциалов"](https://cloud.mail.ru/public/9ksB/xhg2QYGsx)
+* Мини-курс по физике "Метод потенциалов":
+
+    - [Видео](https://cloud.mail.ru/public/9ksB/xhg2QYGsx)
+    - [Д/З](https://yadi.sk/d/2pezugnf3aXrUR)
 
 * [Мини-курс по физике "Олимпиадная механика"](https://cloud.mail.ru/public/2Eu5/zkaih3SBm)
 
@@ -229,7 +239,10 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
 
 * [Мини-курс по физике "Эксперементальный практикум по тепловым и электрическим явлениям"](https://cloud.mail.ru/public/5vvV/qWLiAi5kx)
 
-* [Мини-курс по физике "Разные подходы к решению задач по гидростатике"](https://cloud.mail.ru/public/JZCp/p3eiaBapy)
+* Мини-курс по физике "Разные подходы к решению задач по гидростатике":
+
+    - [Видео](https://cloud.mail.ru/public/JZCp/p3eiaBapy)
+    - [Д/З](https://yadi.sk/d/oWVeHXOp3aXrUh)
 
 * [Курс по программированию в среде "Swift Playgrounds"](https://yadi.sk/d/JMhZwtQO3Uf9aU)
 
@@ -241,6 +254,8 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
 <summary>✊ <b>[Гуманитарные]</b></summary>
 
 * [Подготовка к ОГЭ. Русский язык. 9 класс](https://cloud.mail.ru/public/Lrgj/hEMedDyVS)
+
+* [Подготовка к олимпиадам. Русский язык. 8-11 класс](https://mega.nz/#F!DWhgXaLC!gxoZCsPOOK-0dI6kwiK_ug)
 
 * [Курс подготовки к написанию сочинений и изложений на ОГЭ и ГВЭ 9 класс](https://cloud.mail.ru/public/GfZf/EKm5vTgbJ)
 

@@ -1,7 +1,11 @@
+build/chromium/
+build/foxford-downloader*
+build/ffmpeg*
+build/log.txt
+build/links.txt
+build/credentials.db
+build/*.m3u8
+build/*.mp4
 node_modules/
-links.txt
-credentials.db
-log.txt
-*.mp4
-*.m3u8
 out/
+
