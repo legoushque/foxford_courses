@@ -201,6 +201,9 @@ const download = async ({ linkList }) => {
 
     require("events").EventEmitter.prototype._maxListeners = Infinity;
 
+    fs.chmodSync(ffmpegBin, 0o755);
+    fs.chmodSync(chromiumBin, 0o755);
+
     utils.logger.reset();
     utils.linkReader.promptLinks();
 
