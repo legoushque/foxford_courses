@@ -248,6 +248,8 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
 
 * Язык Python
 
+* [Язык С++](https://mega.nz/#F!f3ZlwYIJ!5Mc6LPZv4Z-eHkXcqZJ4Yw)
+
 </details>
 <br>
 <details>
@@ -285,7 +287,6 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
 * [Обществознание. Подготовка к ОГЭ.](https://cloud.mail.ru/public/EB4p/2sQ3aiwiw)
 
 * Обществознание. Подготовка к олимпиадам.
-
 
 </details>
 <br>
