@@ -165,6 +165,8 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
 
 * [Подготовка к ОГЭ. Математика. 9 класс](https://cloud.mail.ru/public/95XE/g3e1XZCrE)
 
+* [Подготовка к ОГЭ. Физика. 9 класс](https://mega.nz/#F!qfxHUA7I!vV1DaKK0-tUVxo4ocBBA3A)
+
 * [Геометрия. Углубленный уровень. 10 класс](https://yadi.sk/d/-Rv0BQU-3aYjgM)
 
 * Подготовка к ЕГЭ. Математика. 10 класс:
