@@ -2,7 +2,6 @@ const fs = require("fs");
 const path = require("path");
 const puppeteer = require("puppeteer");
 const request = require("request");
-const progress = require("request-progress");
 const chalk = require("chalk");
 const slug = require("slug");
 
@@ -23,6 +22,12 @@ var chromiumBin = process.platform === 'win32'
                     path.join(path.dirname(process.argv[0]), 'chromium', 'Chromium.app', 'Contents', 'MacOS', 'Chromium')
                     :
                     path.join(path.dirname(process.argv[0]), 'chromium', 'chrome');
+
+var powershellBin = process.platform === 'win32'
+                      ?
+                      "powershell.exe"
+                      :
+                      path.join(path.dirname(process.argv[0]), 'powershell', 'pwsh')
 
 const download = async ({ linkList }) => {
     let browser = await puppeteer.launch({
@@ -123,31 +128,44 @@ const download = async ({ linkList }) => {
                     let videoContentLength = await new Promise((resolve, reject) => {
                         request.head(mp4Link, (err, response, body) => {
                             if (err || response.statusCode !== 200) {
-                                reject(`${err}. Код: ${response.statusCode}`);
+                                reject(`С видео ${path.basename(mp4Destination)} что-то случилось. Скачивание невозможно. ${err}. Код: ${response.statusCode}\n`);
                             }
 
                             resolve(response.headers['content-length']);
                         });
+
+                    }).catch(msg => {
+                        console.log(chalk.red(msg));
+                        mp4Resolve(false);
                     });
 
-                    await new Promise((resolve, reject) => {
-                        progress(request(mp4Link))
-                            .on('error', err => reject(err))
-                            .on('end', () => resolve(true))
-                            .pipe(fs.createWriteStream(mp4Destination));
+                    let { error } = await utils.invokePSScript({
+                        binary: powershellBin,
+                        commands: [
+                            `(New-Object System.Net.WebClient).DownloadFile("${mp4Link}", "${mp4Destination}")`
+                        ]
                     });
 
-                    let mp4Stat = fs.statSync(mp4Destination);
-                    let mp4Size = mp4Stat.size;
+                    if (error) {
+                        fs.unlink(mp4Destination, err => {});
 
-                    if (Number(mp4Size) === Number(videoContentLength)) {
-                        console.log(chalk.green(`${path.basename(mp4Destination)} ...✓\n`));
-                        mp4Resolve(true);
+                        console.log(chalk.yellow(`Произошла ошибка при скачивании ${path.basename(mp4Destination)}.\n`));
+                        mp4Resolve(false);
 
                     } else {
-                        console.log(chalk.yellow(`Видео ${path.basename(mp4Destination)} повреждено. Это не я, честно! Но сейчас попробую что-нибудь с этим сделать...\n`));
-                        fs.unlink(mp4Destination, err => {});
-                        mp4Resolve(false);
+                        let mp4Stat = fs.statSync(mp4Destination);
+                        let mp4Size = mp4Stat.size;
+
+                        if (Number(mp4Size) === Number(videoContentLength)) {
+                            console.log(chalk.green(`${path.basename(mp4Destination)} ...✓\n`));
+                            mp4Resolve(true);
+
+                        } else {
+                            fs.unlink(mp4Destination, err => {});
+
+                            console.log(chalk.yellow(`Видео ${path.basename(mp4Destination)} повреждено. Это не я, честно! Но сейчас попробую что-нибудь с этим сделать...\n`));
+                            mp4Resolve(false);
+                        }
                     }
                 });
 
@@ -161,7 +179,7 @@ const download = async ({ linkList }) => {
                     if (stderr) {
                         fs.unlink(mp4Destination, err => {});
 
-                        console.log(chalk.yellow(`Не удалось скачать видео ${path.basename(mp4Destination)}. \nТрейсбек: ${stderr}\n`));
+                        console.log(chalk.red(`Не удалось скачать видео ${path.basename(mp4Destination)}. \nТрейсбек: ${stderr}\n`));
                         finalResolve(false);
 
                     } else {

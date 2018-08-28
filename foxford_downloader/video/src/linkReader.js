@@ -15,7 +15,8 @@ module.exports = class {
                          .split(/\r/)
                          .filter(Boolean)
                          |> (filteredList => new Set(filteredList))
-                         |> (uniqueList => [...uniqueList]);
+                         |> (uniqueSet => [...uniqueSet])
+                         |> (uniqueList => uniqueList.map(el => el.trim()));
 
         if (linkList.length === 0) {
             console.log(chalk.red('Ссылки не загружены'));
@@ -46,6 +47,7 @@ module.exports = class {
         let isReady = 'Введите Y, когда будете готовы. N - чтобы выйти. '
                         |> chalk.yellow
                         |> prompt
+                        |> (rawInput => rawInput.trim())
                         |> (input => /^Y$/i.test(input));
         if (!isReady) {
             process.exit(0);

@@ -1,4 +1,5 @@
 const exec = require("child_process").exec;
+const spawn = require("child_process").spawn;
 const fs = require("fs");
 const sqlite3 = require("sqlite3").verbose();
 const path = require("path");
@@ -27,6 +28,27 @@ module.exports = {
             exec(cmd, { maxBuffer: Infinity }, (error, stdout, stderr) => {
                 error ? resolve({ stderr: stderr, stdout: stdout }) : resolve({ stderr: null, stdout: stdout });
             });
+        });
+    },
+
+    invokePSScript({ binary, commands }) {
+        return new Promise(resolve => {
+            let psConsole = spawn(binary, ["-ExecutionPolicy", "Bypass", "-NoProfile", "-Command", "-"]);
+
+            psConsole.on('close', code => {
+                if (code === 0) {
+                    resolve({ error: false });
+
+                } else {
+                    resolve({ error: true });
+                }
+            });
+
+            commands.forEach(cmd => {
+                psConsole.stdin.write(`${cmd}\n`);
+            });
+
+            psConsole.stdin.end();
         });
     },
 
@@ -65,16 +87,24 @@ module.exports = {
             } else {
                 console.log(chalk.yellow('Войдите в свой аккаунт\n'));
 
-                let login = prompt(chalk.green('Логин: '));
-                let password = prompt(chalk.green('Пароль: '));
+                let login = 'Логин: '
+                                |> chalk.green
+                                |> prompt
+                                |> (input => input.trim());
+
+                let password = 'Пароль: '
+                                |> chalk.green
+                                |> prompt
+                                |> (input => input.trim());
 
                 let isReady = 'Всё верно (Y/N)? '
                                 |> chalk.yellow
                                 |> prompt
+                                |> (rawInput => rawInput.trim())
                                 |> (input => /^Y$/i.test(input));
 
                 console.log("\n");
-                
+
                 if (isReady) {
                     let db = new sqlite3.Database(path.join(path.dirname(process.argv[0]), 'credentials.db'));
 
