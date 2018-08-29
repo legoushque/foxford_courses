@@ -12,12 +12,11 @@
     "@babel/cli": "^7.0.0-rc.1",
     "@babel/core": "^7.0.0-rc.1",
     "@babel/plugin-proposal-pipeline-operator": "^7.0.0-rc.1",
-    "chalk": "^2.4.1",
+    "fluent-ffmpeg": "^2.1.2",
+    "got": "^9.1.0",
+    "listr": "^0.14.1",
     "pkg": "^4.3.4",
-    "prompt-sync": "^4.1.6",
     "puppeteer": "^1.7.0",
-    "request": "^2.88.0",
-    "slug": "^0.9.1",
-    "sqlite3": "^4.0.2"
+    "rxjs": "^6.2.2"
   }
 }
