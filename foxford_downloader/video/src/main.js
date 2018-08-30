@@ -164,8 +164,7 @@ new Listr([
                                                     .videoCodec('copy')
                                                     .outputOptions([
                                                         '-bsf:a aac_adtstoasc',
-                                                        '-strict',
-                                                        '-2'
+                                                        '-preset superfast'
                                                     ])
                                                     .save(destination);
 
