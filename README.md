@@ -165,6 +165,11 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
 
 * [Подготовка к ОГЭ. Математика. 9 класс](https://cloud.mail.ru/public/95XE/g3e1XZCrE)
 
+* Подготовка к олимпиадам. Математика. 9 класс:
+
+    - [Видео](https://mega.nz/#F!br4g1CRb!Yi_hw2wmK4BPe7fXCQmA4Q)
+    - [Д/З](https://yadi.sk/d/dNIoDTyW3ajwh7)
+
 * [Подготовка к ОГЭ. Физика. 9 класс](https://mega.nz/#F!qfxHUA7I!vV1DaKK0-tUVxo4ocBBA3A)
 
 * [Геометрия. Углубленный уровень. 10 класс](https://yadi.sk/d/-Rv0BQU-3aYjgM)
@@ -212,6 +217,8 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
     - [Д/З](https://yadi.sk/d/BzMMJBXl3aNgiv)
 
 * Информатика. Подготовка к ЕГЭ.
+
+* [Информатика. Подготовка к олимпиадам](https://mega.nz/#F!zS431KpL!9J9wwxYsf49aw5Jbd-Py4Q)
 
 * Мини-курс по математике "Векторный метод в пространстве"
 
@@ -288,7 +295,10 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
 
 * [Обществознание. Подготовка к ОГЭ.](https://cloud.mail.ru/public/EB4p/2sQ3aiwiw)
 
-* Обществознание. Подготовка к олимпиадам.
+* Обществознание. Подготовка к олимпиадам:
+
+    - [Видео](https://yadi.sk/d/ZvZKfGJC3YtGQi)
+    - [Материалы](https://yadi.sk/d/5O-mW7i63ajfhX)
 
 </details>
 <br>
