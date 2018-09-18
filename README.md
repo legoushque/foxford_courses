@@ -216,6 +216,10 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
     - [Видео](https://mega.nz/#F!nvhniQxD!5p07SQGsfjOGsZ0T-A2u1w)
     - [Д/З](https://yadi.sk/d/BzMMJBXl3aNgiv)
 
+* [Физика. Подготовка к олимпиадам. 9 класс](https://yadi.sk/d/DNN651RR3aC5Qa)
+
+* [Физика. Подготовка к олимпиадам. 8 класс](https://yadi.sk/d/eum01uh1tzdlcw)
+
 * Информатика. Подготовка к ЕГЭ.
 
 * [Информатика. Подготовка к олимпиадам](https://mega.nz/#F!zS431KpL!9J9wwxYsf49aw5Jbd-Py4Q)
