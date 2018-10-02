@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const request = require("request");
 
 
 module.exports = {
@@ -24,6 +25,22 @@ module.exports = {
             }));
 
             resolve(true);
+        });
+    },
+
+    checkAvailability(url) {
+        return new Promise((resolve, reject) => {
+            request({
+                method: 'HEAD',
+                uri: url
+            },
+            (err, httpResponse, body) => {
+                if (err || String(httpResponse.statusCode).match(/^(4|5)\d{2}$/)) {
+                    return reject(new Error(`Resource unavailable.  Error: ${err}; Status: ${httpResponse.statusCode}.`));
+                }
+
+                return resolve(httpResponse);
+            });
         });
     }
 };

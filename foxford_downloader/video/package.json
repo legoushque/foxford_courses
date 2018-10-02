@@ -4,19 +4,20 @@
   "description": "Downloader utility for foxford courses",
   "bin": "out/main.js",
   "scripts": {
-    "build": "export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true && npm ci && babel src/ -d out && pkg . --out-path build/ && rm -rf out/ && rm -rf node_modules/"
+    "linbuild": "export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true && npm ci && babel src/ -d out && pkg . --out-path build/ && rm -rf out/ && rm -rf node_modules/",
+    "winbuild": "powershell -ExecutionPolicy Bypass -NoLogo -NoProfile -Command \"& {[System.Environment]::SetEnvironmentVariable('PUPPETEER_SKIP_CHROMIUM_DOWNLOAD', 'true'); &'npm' ci; &'babel' .\\src\\ -d .\\out; &'pkg' .\\ --out-path .\\build\\; &'Remove-Item' .\\out\\ -Force -Recurse; &'Remove-Item' .\\node_modules\\ -Force -Recurse}\""
   },
   "author": "Marise Hayashi <@limitedeternity> (https://limitedeternity.github.io/)",
   "license": "MIT",
   "dependencies": {
-    "@babel/cli": "^7.0.0-rc.1",
-    "@babel/core": "^7.0.0-rc.1",
-    "@babel/plugin-proposal-pipeline-operator": "^7.0.0-rc.1",
-    "fluent-ffmpeg": "^2.1.2",
-    "got": "^9.1.0",
-    "listr": "^0.14.1",
-    "pkg": "^4.3.4",
-    "puppeteer": "^1.7.0",
-    "rxjs": "^6.2.2"
+    "@babel/cli": "7.0.0-rc.1",
+    "@babel/core": "7.0.0-rc.1",
+    "@babel/plugin-proposal-pipeline-operator": "7.0.0-rc.1",
+    "fluent-ffmpeg": "2.1.2",
+    "listr": "0.14.1",
+    "pkg": "4.3.4",
+    "puppeteer": "1.8.0",
+    "request": "2.88.0",
+    "rxjs": "6.2.2"
   }
 }

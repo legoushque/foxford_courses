@@ -1,7 +1,6 @@
 const fs = require("fs");
 const path = require("path");
 const puppeteer = require("puppeteer");
-const got = require("got");
 const Listr = require("listr");
 const { Observable } = require("rxjs");
 const ffmpeg = require("fluent-ffmpeg");
@@ -81,10 +80,35 @@ new Listr([
             browser = await puppeteer.launch({
                 executablePath: chromiumBin,
                 headless: true,
+                slowMo: 0,
                 args: [
                     '--proxy-server="direct://"',
                     '--proxy-bypass-list=*'
                 ]
+            });
+        }
+    },
+    {
+        title: 'Setting up page',
+        task: async () => {
+            page = await browser.newPage();
+
+            await page.setExtraHTTPHeaders({ 'Accept-Language': 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7' });
+            await page.setRequestInterception(true);
+
+            let blockedRes = ['image', 'stylesheet', 'media', 'font', 'texttrack', 'object', 'beacon', 'csp_report', 'imageset'];
+            page.on('request', req => {
+                if (blockedRes.includes(req.resourceType())) {
+                    req.abort();
+
+                } else {
+                    req.continue();
+                }
+            });
+
+            page.on('error', async err => {
+                await browser.close();
+                throw err;
             });
         }
     },
@@ -94,9 +118,9 @@ new Listr([
             let login = utils.cliArgs['--login'];
             let password = utils.cliArgs['--password'];
 
-            page = await browser.newPage();
-            await page.goto('https://foxford.ru/user/login?redirect=/dashboard');
-            await page.waitForSelector("div[class^='AuthLayout__container']");
+            await page.goto('https://foxford.ru/user/login?redirect=/dashboard', {
+                waitUntil: 'domcontentloaded'
+            });
 
             await page.evaluate(`
                 fetch("https://foxford.ru/user/login", {
@@ -133,9 +157,11 @@ new Listr([
             await page.waitForSelector('video > source');
 
             let videoLink = await page.evaluate(`document.querySelector('video > source').src;`);
-            accessToken = new URL(videoLink).searchParams.get("access_token");
 
-            await browser.close();
+            accessToken = new URL(videoLink)
+                            |> (parsedLink => parsedLink.searchParams.get("access_token"));
+
+            browser.close();
         }
     },
     {
@@ -149,7 +175,7 @@ new Listr([
                     let webinarId = Number(groupId) + 12000;
                     let streamUrl = `https://storage.netology-group.services/api/v1/buckets/hls.webinar.foxford.ru/sets/${webinarId}/objects/master.m3u8?access_token=${accessToken}`;
 
-                    await got.head(streamUrl);
+                    await utils.checkAvailability(streamUrl);
 
                     downloadTasks.push({
                         title: `${groupId.valueOf()}.mp4`,
