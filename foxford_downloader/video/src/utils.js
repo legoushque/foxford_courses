@@ -10,7 +10,7 @@ module.exports = {
         return acc;
     }, {}),
 
-    anyPromise(promises) {
+    somePromise(promises) {
         let errors = [];
 
         return new Promise(async (resolve, reject) => {
@@ -30,16 +30,27 @@ module.exports = {
 
     checkAvailability(url) {
         return new Promise((resolve, reject) => {
-            request({
-                method: 'HEAD',
-                uri: url
-            },
-            (err, httpResponse, body) => {
-                if (err || String(httpResponse.statusCode).match(/^(4|5)\d{2}$/)) {
-                    return reject(new Error(`Resource unavailable.  Error: ${err}; Status: ${httpResponse.statusCode}.`));
+            let r = request({
+                method: 'GET',
+                uri: url,
+                headers: {
+                    'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3563.0 Safari/537.36'
+                }
+            });
+
+            r.on('response', response => {
+                r.abort();
+
+                if (String(response.statusCode).match(/^(4|5)\d{2}$/)) {
+                    return reject(new Error(`Resource unavailable. Status: ${httpResponse.statusCode}.`));
                 }
 
-                return resolve(httpResponse);
+                return resolve(response.headers);
+            });
+
+            r.on('error', err => {
+                r.abort();
+                return reject(new Error(`Resource unavailable. Error: ${err}.`));
             });
         });
     }

@@ -92,8 +92,6 @@ new Listr([
         title: 'Setting up page',
         task: async () => {
             page = await browser.newPage();
-
-            await page.setExtraHTTPHeaders({ 'Accept-Language': 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7' });
             await page.setRequestInterception(true);
 
             let blockedRes = ['image', 'stylesheet', 'media', 'font', 'texttrack', 'object', 'beacon', 'csp_report', 'imageset'];
@@ -139,7 +137,7 @@ new Listr([
                 }).then(() => location.reload());
             `);
 
-            await utils.anyPromise([
+            await utils.somePromise([
                 page.waitForSelector("div[class^='PupilDashboard']"),
                 page.waitForSelector("div[class^='TeacherDashboard']")
             ]);
@@ -153,12 +151,7 @@ new Listr([
 
             let erlyFronts = await page.evaluate(`document.querySelector('.full_screen > iframe').src;`);
 
-            await page.goto(erlyFronts);
-            await page.waitForSelector('video > source');
-
-            let videoLink = await page.evaluate(`document.querySelector('video > source').src;`);
-
-            accessToken = new URL(videoLink)
+            accessToken = new URL(erlyFronts)
                             |> (parsedLink => parsedLink.searchParams.get("access_token"));
 
             browser.close();
@@ -168,7 +161,7 @@ new Listr([
         title: 'Creating download task list',
         task: () => {
             return new Observable(async currentTaskObserver => {
-                for (link of videoLinks) {
+                for (let link of videoLinks) {
                     currentTaskObserver.next(link);
 
                     let groupId = link.match(/groups\/(\d{5})$/)[1];
