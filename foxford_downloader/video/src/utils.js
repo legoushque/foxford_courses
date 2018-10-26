@@ -42,7 +42,7 @@ module.exports = {
                 r.abort();
 
                 if (String(response.statusCode).match(/^(4|5)\d{2}$/)) {
-                    return reject(new Error(`Resource unavailable. Status: ${httpResponse.statusCode}.`));
+                    return reject(new Error(`Resource unavailable. Status: ${response.statusCode}.`));
                 }
 
                 return resolve(response.headers);
