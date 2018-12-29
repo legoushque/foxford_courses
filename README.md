@@ -333,7 +333,26 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
 </details>
 <br>
 
-*Канал 2018 года (чего нет тут - всё там):*
+----------------------------
+
+***2019 г.***
+------------------
+
+...
+
+<details>
+<summary>⚛️ <b>[Технические]</b></summary>
+    
+* [Подготовка к олимпиадам "Физтех", "Росатом", "Ломоносов"](https://mega.nz/#F!phNGGCSA!bOnNCKQqNFRuuCC6C2ceRQ)
+    
+* [Математика. Подготовка к ЕГЭ. Часть С](https://mega.nz/#F!IZ9CDarJ!ol_8oe2BQRSWz6L3_ps8IA)
+
+</details>
+<br>
+
+------------------------
+
+*Канал в телеге (чего нет тут - всё там):*
 
 https://t.me/joinchat/AAAAAFAGr84eumD2T1acPA
 
