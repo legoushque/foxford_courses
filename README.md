@@ -347,6 +347,14 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
     
 * [Математика. Подготовка к ЕГЭ. Часть С](https://mega.nz/#F!IZ9CDarJ!ol_8oe2BQRSWz6L3_ps8IA)
 
+* [Мини-курс по математике "Векторный метод в пространстве"](https://yadi.sk/d/VpO8uoXWqzfwVg)
+
+* [Мини-курс по математике "Логарифм и экспонента"](https://yadi.sk/d/ZjwU9gwjjsRP3g)
+
+* [Интенсивный курс по математике "Задачи с параметрами на ЕГЭ"](https://yadi.sk/d/KBOGGfuw4EGfkA)
+
+* [Интенсивный курс по математике "Задачи по теории чисел на ЕГЭ"](https://yadi.sk/d/p5EdqMRD8xLZBA)
+
 </details>
 <br>
 
