@@ -7,6 +7,12 @@ import whenDomReady from "when-dom-ready";
 
 */
 
+import homeworkTemplate from "./runtime/homeworkTemplate";
+
+/*
+
+*/
+
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
@@ -51,15 +57,49 @@ waitFor(
 class FoxfordRetriever {
   constructor(courseId) {
     this.courseId = courseId;
-    this.lessonList = [];
-    this.downloadList = [];
     this.accessToken = null;
+    this.videoList = [];
+
+    this.lessonList = [];
+    this.homeworkList = [];
+  }
+
+  writeFile(file, data) {
+    if (fs.existsSync(file)) {
+      let newfname = path.parse(file);
+
+      newfname.name += "0";
+      newfname.base = newfname.name + newfname.ext;
+
+      return this.writeFile(path.format(newfname), data);
+    }
+
+    fs.ensureFileSync(file);
+    fs.writeFileSync(file, data);
+  }
+
+  getCookie(cookiename, cookie) {
+    let cookiestring = RegExp("" + cookiename + "[^;]+").exec(cookie);
+
+    return decodeURIComponent(
+      !!cookiestring ? cookiestring.toString().replace(/^[^=]+./, "") : ""
+    );
   }
 
   async run() {
+    // @TODO: Maybe some progress display?
+
     await this.createLessonList();
-    await this.createDownloadList();
-    await this.download();
+
+    /*
+    @TODO: Algorithm for homework display (~40% done)
+
+    await this.createHomeworkList();
+    await this.retrieveHomework();
+    */
+
+    await this.createVideoList();
+    await this.retrieveVideos();
   }
 
   async createLessonList() {
@@ -101,7 +141,80 @@ class FoxfordRetriever {
     }
   }
 
-  async createDownloadList() {
+  async createHomeworkList() {
+    for (let lesson of this.lessonList) {
+      let id = lesson.id;
+
+      let response = await fetch(`https://foxford.ru/api/lessons/${id}/tasks`);
+      let json = await response.json();
+
+      if (json) {
+        json.forEach(task => {
+          let modTask = task;
+
+          modTask.lessonId = id;
+          this.homeworkList.push(modTask);
+        });
+      }
+    }
+  }
+
+  async retrieveHomework() {
+    for (let task of this.homeworkList) {
+      let taskId = task.id;
+      let lessonId = task.lessonId;
+
+      try {
+        let response = await fetch(
+          `https://foxford.ru/api/lessons/${lessonId}/tasks/${taskId}`
+        );
+
+        if (!response.ok) {
+          throw new Error("Homework unavaliable");
+        }
+      } catch (e) {
+        break;
+      }
+
+      foxFrame.contentWindow.location.href = `https://foxford.ru/lessons/${lessonId}/tasks/${taskId}`;
+
+      await new Promise(resolve => {
+        whenDomReady(resolve, foxFrame.contentWindow.document);
+      });
+
+      await fetch(
+        `https://foxford.ru/api/lessons/${lessonId}/tasks/${taskId}/fails`,
+        {
+          method: "POST",
+          headers: {
+            "X-CSRF-Token": this.getCookie(
+              "csrf_token",
+              foxFrame.contentWindow.document.cookie
+            )
+          }
+        }
+      );
+
+      let response = await fetch(
+        `https://foxford.ru/api/lessons/${lessonId}/tasks/${taskId}`
+      );
+
+      let json = await response.json();
+
+      let outPath = path.join(
+        nw.App.startPath,
+        "output",
+        String(this.courseId),
+        String(lessonId),
+        "homework",
+        `${json.name}.html`
+      );
+
+      this.writeFile(outPath, homeworkTemplate(json));
+    }
+  }
+
+  async createVideoList() {
     for (let lesson of this.lessonList) {
       let id = lesson.id;
 
@@ -166,42 +279,46 @@ class FoxfordRetriever {
           resolveMain();
         });
 
-        this.downloadList.push({
+        this.videoList.push({
           url: videoEl.src,
+          lessonId: id,
           fname: `${lesson.title || webinar_id}.m3u8`
         });
       } else {
         let video_id = webinar_id + 12000;
 
-        this.downloadList.push({
+        this.videoList.push({
           url: `https://storage.netology-group.services/api/v1/buckets/hls.webinar.foxford.ru/sets/${video_id}/objects/master.m3u8?access_token=${
             this.accessToken
           }`,
+          lessonId: id,
           fname: `${lesson.title || webinar_id}.m3u8`
         });
       }
-
-      await new Promise(resolve => setTimeout(resolve, 2500));
     }
   }
 
-  async download() {
-    for (let { url, fname } of this.downloadList) {
+  async retrieveVideos() {
+    for (let video of this.videoList) {
       let outPath = path.join(
         nw.App.startPath,
         "output",
-        `${this.courseId}`,
-        fname
+        String(this.courseId),
+        String(video.lessonId),
+        video.fname
       );
 
       try {
+        /*
+        @TODO: ffmpeg with progress (maybe Listr + ffmpeg-downloader + fluent-ffmpeg?)
+        */
+
         let response = await axios({
           method: "GET",
-          url
+          url: video.url
         });
 
-        fs.ensureFileSync(outPath);
-        fs.writeFileSync(outPath, response.data);
+        this.writeFile(outPath, response.data);
       } catch (e) {
         continue;
       }
