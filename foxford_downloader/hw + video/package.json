@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "ffbinaries": "^1.1.0",
+    "fluent-ffmpeg": "^2.1.2",
     "fs-extra": "^7.0.1",
     "nw-react-scripts": "2.0.0",
     "react": "^16.7.0",
