@@ -2,6 +2,8 @@
 
 Платиновая шапка платинового треда, посвященного подготовке к ОГЭ/ЕГЭ по техническим направлениям (в основном), а также курсам от лучших преподавателей М(ФТИ), любезно слитым анонимами.
 
+Донаты принимаются на телефон +79956009255 (не киви, просто телефон).
+
 Текущий тред: https://2ch.hk/un/res/644540.html
 
 ---
@@ -359,7 +361,7 @@ https://mega.nz/#!BFNV3Q7b!kioo4rQuzS5l7GyGpXJyGhlgPlnSQ2c15DYMsuOi8kw
 
 _Канал в телеге (чего нет тут - всё там):_
 
-https://t.me/joinchat/AAAAAFAGr84eumD2T1acPA
+https://t.me/joinchat/AAAAAFAGr85J0HoH_uq9NQ
 
 ---
 
@@ -408,15 +410,13 @@ _Разное вперемешку:_
 
 https://mega.nz/#F!VdMS1QTL!UzidAXtwhfSPXDC8YoUDAQ
 
+_Платина разного рода:_
+
+https://github.com/tanookki/FizMatInf
+
 ---
 
-[**Способы извлечения данных**](https://github.com/limitedeternity/foxford_courses/tree/master/foxford_downloader/video)
-
----
-
-**Foxford-бот в Telegram (Курсы < 2015 г.):**
-
-http://telegram.me/foxford_bot
+[**Способы извлечения данных**](https://github.com/limitedeternity/foxford_courses/tree/master/foxford_downloader/hw%20%2B%20video)
 
 ---
 

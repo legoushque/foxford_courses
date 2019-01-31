@@ -4,11 +4,9 @@ class CommonMixin {
   }
 
   async createLessonList() {
-    let response = await fetch(
+    let json = await fetch(
       `https://foxford.ru/api/courses/${this.courseId}/lessons`
-    );
-
-    let json = await response.json();
+    ).then(r => r.json());
 
     let cursorAfter = json.cursors.after;
     let cursorBefore = json.cursors.before;
@@ -16,30 +14,30 @@ class CommonMixin {
     this.lessonList = [...json.lessons];
 
     while (cursorBefore) {
-      response = await fetch(
+      json = await fetch(
         `https://foxford.ru/api/courses/${
           this.courseId
         }/lessons?before=${cursorBefore}`
-      );
+      ).then(r => r.json());
 
-      json = await response.json();
-
-      this.lessonList = [...this.lessonList, ...json.lessons];
+      this.lessonList = [...json.lessons, ...this.lessonList];
       cursorBefore = json.cursors.before;
     }
 
     while (cursorAfter) {
-      response = await fetch(
+      json = await fetch(
         `https://foxford.ru/api/courses/${
           this.courseId
         }/lessons?after=${cursorAfter}`
-      );
-
-      json = await response.json();
+      ).then(r => r.json());
 
       this.lessonList = [...this.lessonList, ...json.lessons];
       cursorAfter = json.cursors.after;
     }
+
+    this.lessonList = this.lessonList.filter(
+      lesson => lesson["timeline_view_state"] === "past" && !lesson["is_locked"]
+    );
   }
 }
 
