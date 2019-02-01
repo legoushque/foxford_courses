@@ -70,7 +70,7 @@ class VideoMixin {
       this.videoList.push({
         url: videoLink,
         lessonId: id,
-        fname: `${sanitize(lesson.title) || webinar_id}.mp4`
+        fname: `${sanitize(lesson.title) || webinar_id}`
       });
     }
   }
@@ -78,28 +78,41 @@ class VideoMixin {
   async createDownloadTasksList() {
     for (let video of this.videoList) {
       this.downloadTasks.push({
-        title: video.fname,
+        title: `${video.lessonId}`,
         task: `
         () => {
           return new Observable(async taskObserver => {
-            let outPath = path.join(
+            let mp4FilePath = path.join(
               cwd,
               "output",
               "${this.courseId}",
               "${video.lessonId}",
-              "${video.fname}"
+              "${video.fname}.mp4"
             );
+
+            let m3u8FilePath = path.join(
+              cwd,
+              "output",
+              "${this.courseId}",
+              "${video.lessonId}",
+              "${video.fname}.m3u8"
+            );
+
+            fs.ensureFileSync(mp4FilePath);
+            fs.ensureFileSync(m3u8FilePath);
+
+            let m3u8WriteStream = fs.createWriteStream(m3u8FilePath);
+            request("${video.url}").pipe(m3u8WriteStream);
 
             await new Promise((resolve, reject) => {
               let command = ffmpeg({ source: "${video.url}" })
                 .audioCodec("copy")
                 .videoCodec("copy")
                 .outputOptions(["-bsf:a aac_adtstoasc", "-preset superfast"])
-                .save(outPath);
+                .save(mp4FilePath);
 
               command.on("start", () => {
-                fs.ensureFileSync(outPath);
-                taskObserver.next("N/A [0 kbps]");
+                taskObserver.next("${video.lessonId}: N/A [0 kbps]");
               });
 
               command.on("progress", progress =>

@@ -37,6 +37,8 @@ class App extends Component {
         <iframe
           id="foxFrame"
           title="foxFrame"
+          nwdisable="true"
+          nwfaketop="true"
           allowFullScreen
           frameBorder="0"
           referrerPolicy="no-referrer"
